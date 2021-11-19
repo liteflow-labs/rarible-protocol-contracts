@@ -9,8 +9,9 @@ import "@rarible/royalties-upgradeable/contracts/RoyaltiesV2Upgradeable.sol";
 import "@rarible/lazy-mint/contracts/erc-1155/IERC1155LazyMint.sol";
 import "./Mint1155Validator.sol";
 import "./ERC1155BaseURI.sol";
+import "../access/MinterAccessControl.sol";
 
-abstract contract ERC1155Lazy is IERC1155LazyMint, ERC1155BaseURI, Mint1155Validator, RoyaltiesV2Upgradeable, RoyaltiesV2Impl {
+abstract contract ERC1155Lazy is IERC1155LazyMint, ERC1155BaseURI, Mint1155Validator, RoyaltiesV2Upgradeable, RoyaltiesV2Impl, MinterAccessControl  {
     using SafeMathUpgradeable for uint;
 
     bytes4 private constant _INTERFACE_ID_ERC165 = 0x01ffc9a7;
@@ -62,11 +63,21 @@ abstract contract ERC1155Lazy is IERC1155LazyMint, ERC1155BaseURI, Mint1155Valid
         require(_amount > 0, "amount incorrect");
 
         if (supply[data.tokenId] == 0) {
+            bool signedByOperator = data.signatures.length > data.creators.length;
+
             require(minter == data.creators[0].account, "tokenId incorrect");
             require(data.supply > 0, "supply incorrect");
-            require(data.creators.length == data.signatures.length);
+            require(data.creators.length == data.signatures.length - (signedByOperator ? 1 : 0));
 
             bytes32 hash = LibERC1155LazyMint.hash(data);
+            if (signedByOperator) {
+                // first signature after creators must be an operator
+                require(isValidMinterSignature(hash, data.signatures[data.creators.length]), "ERC1155: invalid operator signature");
+            }
+            else {
+                // minter must be granted minter role
+                require(isValidMinter(minter), "ERC1155: minter not granted");
+            }
             for (uint i = 0; i < data.creators.length; i++) {
                 address creator = data.creators[i].account;
                 if (creator != sender) {

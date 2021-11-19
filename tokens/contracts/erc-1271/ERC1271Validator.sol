@@ -14,18 +14,17 @@ abstract contract ERC1271Validator is EIP712Upgradeable {
     bytes4 constant internal MAGICVALUE = 0x1626ba7e;
 
     function validate1271(address signer, bytes32 structHash, bytes memory signature) internal view {
+        require(isValid1271(signer, structHash, signature), SIGNATURE_ERROR);
+    }
+
+    function isValid1271(address signer, bytes32 structHash, bytes memory signature) internal view returns (bool) {
         bytes32 hash = _hashTypedDataV4(structHash);
         if (signer.isContract()) {
-            require(
-                ERC1271(signer).isValidSignature(hash, signature) == MAGICVALUE,
-                SIGNATURE_ERROR
-            );
+            return ERC1271(signer).isValidSignature(hash, signature) == MAGICVALUE;
         } else {
-            require(
-                hash.recover(signature) == signer,
-                SIGNATURE_ERROR
-            );
+            return hash.recover(signature) == signer;
         }
     }
+
     uint256[50] private __gap;
 }

@@ -10,8 +10,9 @@ import "@rarible/lazy-mint/contracts/erc-721/IERC721LazyMint.sol";
 import "../Mint721Validator.sol";
 import "@openzeppelin/contracts-upgradeable/math/SafeMathUpgradeable.sol";
 import "./ERC721URI.sol";
+import "../access/MinterAccessControl.sol";
 
-abstract contract ERC721LazyMinimal is IERC721LazyMint, ERC721UpgradeableMinimal, Mint721Validator, RoyaltiesV2Upgradeable, RoyaltiesV2Impl, ERC721URI {
+abstract contract ERC721LazyMinimal is IERC721LazyMint, ERC721UpgradeableMinimal, Mint721Validator, RoyaltiesV2Upgradeable, RoyaltiesV2Impl, ERC721URI, MinterAccessControl {
     using SafeMathUpgradeable for uint;
 
     bytes4 private constant _INTERFACE_ID_ERC165 = 0x01ffc9a7;
@@ -50,12 +51,21 @@ abstract contract ERC721LazyMinimal is IERC721LazyMint, ERC721UpgradeableMinimal
     function mintAndTransfer(LibERC721LazyMint.Mint721Data memory data, address to) public override virtual {
         address minter = address(data.tokenId >> 96);
         address sender = _msgSender();
+        bool signedByOperator = data.signatures.length > data.creators.length;
 
         require(minter == data.creators[0].account, "tokenId incorrect");
-        require(data.creators.length == data.signatures.length);
+        require(data.creators.length == data.signatures.length - (signedByOperator ? 1 : 0));
         require(minter == sender || isApprovedForAll(minter, sender), "ERC721: transfer caller is not owner nor approved");
 
         bytes32 hash = LibERC721LazyMint.hash(data);
+        if (signedByOperator) {
+            // first signature after creators must be an operator
+            require(isValidMinterSignature(hash, data.signatures[data.creators.length]), "ERC721: invalid operator signature");
+        }
+        else {
+            // minter must be granted minter role
+            require(isValidMinter(minter), "ERC721: minter not granted");
+        }
         for (uint i = 0; i < data.creators.length; i++) {
             address creator = data.creators[i].account;
             if (creator != sender) {
