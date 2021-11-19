@@ -399,6 +399,53 @@ contract("ERC721Rarible", accounts => {
     );
   });
 
+  it("mint and transfer with minter access control and operator signature", async () => {
+    const minter = accounts[1];
+    const transferTo = accounts[2];
+    const operator = accounts[3];
+
+    const tokenId = minter + "b00000000000000000000001";
+    const tokenURI = "//uri";
+    
+    const signature = await getSignature(tokenId, tokenURI, creators([minter]), [], minter);
+    const operatorSignature = await getSignature(tokenId, tokenURI, creators([minter]), [], operator);
+
+    await token.enableMinterAccessControl({from: tokenOwner});
+    assert.equal(await token.minterAccessControlEnabled(), true);
+
+    await token.grantMinter(operator, {from: tokenOwner})
+    assert.equal(await token.isValidMinter(operator), true);
+    assert.equal(await token.isValidMinter(minter), false);
+    assert.equal(await token.isValidMinter(transferTo), false);
+
+    await token.mintAndTransfer([tokenId, tokenURI, creators([minter]), [], [signature, operatorSignature]], transferTo, {from: minter});
+    assert.equal(await token.ownerOf(tokenId), transferTo);
+  });
+
+  it("mint and transfer with minter access control and wrong operator signature", async () => {
+    const minter = accounts[1];
+    const transferTo = accounts[2];
+    const operator = accounts[3];
+
+    const tokenId = minter + "b00000000000000000000001";
+    const tokenURI = "//uri";
+    
+    const signature = await getSignature(tokenId, tokenURI, creators([minter]), [], minter);
+    const operatorSignature = await getSignature(tokenId, tokenURI, creators([minter]), [], transferTo);
+
+    await token.enableMinterAccessControl({from: tokenOwner});
+    assert.equal(await token.minterAccessControlEnabled(), true);
+
+    await token.grantMinter(operator, {from: tokenOwner})
+    assert.equal(await token.isValidMinter(operator), true);
+    assert.equal(await token.isValidMinter(minter), false);
+    assert.equal(await token.isValidMinter(transferTo), false);
+
+    await expectThrow(
+      token.mintAndTransfer([tokenId, tokenURI, creators([minter]), [], [signature, operatorSignature]], transferTo, {from: minter})
+    );
+  });
+
   it("standard transfer from owner", async () => {
     let minter = accounts[1];
     const tokenId = minter + "b00000000000000000000001";

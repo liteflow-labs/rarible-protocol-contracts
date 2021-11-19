@@ -60,15 +60,24 @@ abstract contract ERC1155Lazy is IERC1155LazyMint, ERC1155BaseURI, Mint1155Valid
         address sender = _msgSender();
 
         require(minter == sender || isApprovedForAll(minter, sender), "ERC1155: transfer caller is not approved");
-        require(isValidMinter(minter), "ERC1155: minter not granted");
         require(_amount > 0, "amount incorrect");
 
         if (supply[data.tokenId] == 0) {
+            bool signedByOperator = data.signatures.length > data.creators.length;
+
             require(minter == data.creators[0].account, "tokenId incorrect");
             require(data.supply > 0, "supply incorrect");
-            require(data.creators.length == data.signatures.length);
+            require(data.creators.length == data.signatures.length - (signedByOperator ? 1 : 0));
 
             bytes32 hash = LibERC1155LazyMint.hash(data);
+            if (signedByOperator) {
+                // first signature after creators must be an operator
+                require(isValidMinterSignature(hash, data.signatures[data.creators.length]), "ERC1155: invalid operator signature");
+            }
+            else {
+                // minter must be granted minter role
+                require(isValidMinter(minter), "ERC1155: minter not granted");
+            }
             for (uint i = 0; i < data.creators.length; i++) {
                 address creator = data.creators[i].account;
                 if (creator != sender) {
