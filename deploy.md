@@ -33,9 +33,9 @@ npm run truffle -- deploy
 ### seed database with erc20
 
 ```sql
-INSERT INTO "public"."Category" ("id", "title", "createdAt") VALUES ('fa73db4b-f08a-4bf6-b203-df623a5ebaea', 'Currency', '2022-02-11 11:36:50.902602+00');
-INSERT INTO "public"."Account" ("address", "name", "cover", "description", "email", "image", "instagram", "twitter", "website", "createdAt", "username", "isAdmin") VALUES ('0x0000000000000000000000000000000000000000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-02-11 11:38:27.04504+00', NULL, 'f');
-INSERT INTO "public"."Asset" ("id", "creatorAddress", "name", "description", "standard", "categoryId", "image", "animationUrl", "transactionHash", "createdAt") VALUES ('0xb151157e40CD33727d3be904B872A192154eD20D', '0x0000000000000000000000000000000000000000', 'ERC20', 'currency', 'ERC20', 'fa73db4b-f08a-4bf6-b203-df623a5ebaea', 'ipfs://QmWdK1GCQpPVcbfJNJPy32j5E7FsnQ3oRSKq3gJgRVWgP1', NULL, NULL, '2022-02-11 11:39:48.18931+00');
+INSERT INTO "public"."Category" ("id", "title") VALUES ('fa73db4b-f08a-4bf6-b203-df623a5ebaea', 'Currency');
+INSERT INTO "public"."Account" ("address") VALUES ('0x0000000000000000000000000000000000000000');
+INSERT INTO "public"."Asset" ("id", "creatorAddress", "name", "description", "standard", "categoryId", "image") VALUES ('0xb151157e40CD33727d3be904B872A192154eD20D', '0x0000000000000000000000000000000000000000', 'ERC20', 'currency', 'ERC20', 'fa73db4b-f08a-4bf6-b203-df623a5ebaea', 'ipfs://QmWdK1GCQpPVcbfJNJPy32j5E7FsnQ3oRSKq3gJgRVWgP1');
 ```
 
 ### start ganache for local dev
