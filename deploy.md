@@ -7,14 +7,7 @@ rm -fr build && rm -f .openzeppelin/unknown-1337.json && npm run truffle -- migr
 
 - copy smart contract from `deployed transferProxy at`
 - copy smart contract from `deployed erc20TransferProxy at`
-  <!-- - copy smart contract from `deployed erc721 minimal at` -->
-  <!-- - copy smart contract from `deployed erc1155 at ` -->
 - copy smart contract from `deployed exchangeV2 at`
-
-TODO: try to use the factory instead
-
-<!-- - copy smart contract from `deployed factory1155 at`
-- copy smart contract from `deployed factory721 minimal at` -->
 
 ### deploy erc721 token
 
