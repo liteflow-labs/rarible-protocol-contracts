@@ -52,7 +52,7 @@
   "sourceMap": "57:392:113:-:0;;;83:33;;;-1:-1:-1;;;;;;83:33:113;106:10;83:33;;;57:392;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "57:392:113:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;122:36;;;:::i;:::-;;;;;;;;;;;;;;;;83:33;;;:::i;:::-;;;;-1:-1:-1;;;;;83:33:113;;;;;;;;;;;;;;338:109;;;;;;;;;;;;;;;;-1:-1:-1;338:109:113;;:::i;:::-;;122:36;;;;:::o;83:33::-;;;-1:-1:-1;;;;;83:33:113;;:::o;338:109::-;232:5;;-1:-1:-1;;;;;232:5:113;218:10;:19;197:117;;;;-1:-1:-1;;;197:117:113;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;404:24:::1;:36:::0;338:109::o",
   "source": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.7.6;\n\ncontract Migrations {\n    address public owner = msg.sender;\n    uint public last_completed_migration;\n\n    modifier restricted() {\n        require(\n            msg.sender == owner,\n            \"This function is restricted to the contract's owner\"\n        );\n        _;\n    }\n\n    function setCompleted(uint completed) public restricted {\n        last_completed_migration = completed;\n    }\n}\n",
-  "sourcePath": "/Users/ds/Documents/rarible/protocol-contracts/deploy/contracts/Migrations.sol",
+  "sourcePath": "/Users/nico/Development/Rarible/rarible-protocol-contracts/deploy/contracts/Migrations.sol",
   "ast": {
     "absolutePath": "project:/contracts/Migrations.sol",
     "exportedSymbols": {
@@ -880,45 +880,21 @@
     "version": "0.7.6+commit.7338295f.Emscripten.clang"
   },
   "networks": {
-    "1": {
+    "56": {
       "events": {},
       "links": {},
-      "address": "0x4397162d2aDEb5F02Ba27dE3715f3c2A208ed7B5",
-      "transactionHash": "0x6ad0e9d2285bf2e7689298ee2e068dd0a454cdd5488d63aac10e976a58652bf2"
+      "address": "0xDa84155Faf104c0222DCa808b3D8ba32DB174DF7",
+      "transactionHash": "0x696c946e7fb8f892b9d1a961222c027561c640b23676a7e99efba7d2275225bc"
     },
-    "3": {
+    "97": {
       "events": {},
       "links": {},
-      "address": "0x0915d5cBd37C80DE2940589662b58546B2FDf523",
-      "transactionHash": "0xfb024659b58a117a371966af5c7ea5fab490a61428f844db45f31e5ca43220da"
-    },
-    "4": {
-      "events": {},
-      "links": {},
-      "address": "0xE00B0E1C7fFdaf335715D075e2123e6872EC6aD6",
-      "transactionHash": "0x33aa45f3981f75404b7a44350a2fab8d47e990289576c82deda06e040151677f"
-    },
-    "18": {
-      "events": {},
-      "links": {},
-      "address": "0x384E9DD9b06C345c00102D66F0F4b73d11460F17",
-      "transactionHash": "0xffc657775fea1d9c62be87780fb72d9b9a6691e42bba75c831fe47e43ec5a0b1"
-    },
-    "137": {
-      "events": {},
-      "links": {},
-      "address": "0xf2c84E60d5E14fE2D5C41bbdDBE8989DbDE5843e",
-      "transactionHash": "0x0f2ea41977be4f25e666bd4eba3e2f50b1f61d7781833a82cddb035645b0d22a"
-    },
-    "80001": {
-      "events": {},
-      "links": {},
-      "address": "0x1c01A5d110c88b007bAAF05852635917c81e68bF",
-      "transactionHash": "0xb801df7fc1ecd9acdc1ab3e9cb7d9c51494e23c15a479ed6cdf987109cb0c3cc"
+      "address": "0xB57C9992F5FD5C8e1c41641aa8ca0B0B5538a90b",
+      "transactionHash": "0xcfa73251daed9384f9dd339bbfbf0c2cb67f99931a6e6dc0cd813221e045c8d6"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2022-01-10T17:14:25.022Z",
+  "updatedAt": "2022-02-16T04:37:47.842Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

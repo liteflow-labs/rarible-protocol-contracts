@@ -32,17 +32,22 @@ function createNetwork(name) {
       gasPrice: gasPrice + "000000000",
       network_id: json.network_id,
       skipDryRun: true,
-      networkCheckTimeout: 500000
+      networkCheckTimeout: 4 * 1000 * 1000 // 500000
     };
   } catch (e) {
     return null;
   }
 }
 
+const providers = {}
+
 function createProvider(address, key, url) {
+  if (providers[address]) return providers[address]
   console.log("creating provider for address: " + address);
   var HDWalletProvider = require("@truffle/hdwallet-provider");
-  return new HDWalletProvider(key, url);
+  const provider = new HDWalletProvider(key, url);
+  providers[address] = provider
+  return provider
 }
 
 module.exports = {
@@ -55,14 +60,17 @@ module.exports = {
   ],
 
   networks: {
-    e2e: createNetwork("e2e"),
-    ops: createNetwork("ops"),
-    ropsten: createNetwork("ropsten"),
-    mainnet: createNetwork("mainnet"),
-    rinkeby: createNetwork("rinkeby"),
-    rinkeby2: createNetwork("rinkeby2"),
-    polygon_mumbai: createNetwork("polygon_mumbai"),
-    polygon_mainnet: createNetwork("polygon_mainnet")
+    // e2e: createNetwork("e2e"),
+    // ops: createNetwork("ops"),
+    // ropsten: createNetwork("ropsten"),
+    // mainnet: createNetwork("mainnet"),
+    // rinkeby: createNetwork("rinkeby"),
+    // rinkeby2: createNetwork("rinkeby2"),
+    // polygon_mumbai: createNetwork("polygon_mumbai"),
+    // polygon_mainnet: createNetwork("polygon_mainnet"),
+    // ganache: createNetwork("ganache"),
+    // binance_testnet: createNetwork("binance_testnet"),
+    binance: createNetwork("binance"),
   },
 
   compilers: {

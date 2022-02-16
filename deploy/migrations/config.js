@@ -67,6 +67,23 @@ const def = {
   deploy_CryptoPunks: true,
   address_ownerTestCryptoPunks: "0xf17f52151EbEF6C7334FAD080c5704D77216b732",
 }
+const ganache = {
+  communityWallet: "0x424ACe4669579986D200eBeb3C75924282324a42",
+  deploy_CryptoPunks: false,
+  address_CryptoPunks: "0x0000000000000000000000000000000000000000",
+}
+
+const binance_testnet = {
+  communityWallet: "0x709D48037015f1B1332FB66efe7C90725E2f979D",
+  deploy_CryptoPunks: false,
+  address_CryptoPunks: "0x0000000000000000000000000000000000000000",
+}
+
+const binance = {
+  communityWallet: "0x537B5E0D5e370C2Ce23a16280dF4f106A2Cfc4fA",
+  deploy_CryptoPunks: false,
+  address_CryptoPunks: "0x0000000000000000000000000000000000000000",
+}
 
 let settings = {
   "default": def,
@@ -79,7 +96,10 @@ let settings = {
   "e2e": e2e,
   "e2e-fork": e2e,
   "polygon_mumbai": polygon_mumbai,
-  "polygon_mainnet": polygon_mainnet
+  "polygon_mainnet": polygon_mainnet,
+  "ganache": ganache,
+  "binance_testnet": binance_testnet,
+  "binance": binance,
 };
 
 function getSettings(network) {

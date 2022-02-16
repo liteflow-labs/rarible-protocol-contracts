@@ -5510,41 +5510,9 @@
     "name": "solc",
     "version": "0.7.6+commit.7338295f.Emscripten.clang"
   },
-  "networks": {
-    "1": {
-      "links": {},
-      "address": "0xdf907c1b541b1843b511d115e2fef78a6a830772",
-      "transactionHash": "0x517fedefef4329b47378cf8a73b1d03783896fa7a258efa3d8c05bacb4446c16"
-    },
-    "4": {
-      "events": {
-        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "previousOwner",
-              "type": "address"
-            },
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "newOwner",
-              "type": "address"
-            }
-          ],
-          "name": "OwnershipTransferred",
-          "type": "event"
-        }
-      },
-      "links": {},
-      "address": "0xCBe1c04934D0390cf6c7D071AC8bb7047f64111E",
-      "transactionHash": "0xcd53def76260797574fc09d9daf0df9d846a331918c0cfc0f1bff2db36488053"
-    }
-  },
+  "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-12-28T14:22:10.891Z",
+  "updatedAt": "2022-02-13T12:29:59.554Z",
   "devdoc": {
     "kind": "dev",
     "methods": {

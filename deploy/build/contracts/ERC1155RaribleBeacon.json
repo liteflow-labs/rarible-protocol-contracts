@@ -55,7 +55,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -68,7 +69,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -514,7 +516,7 @@
     "version": "0.7.6+commit.7338295f.Emscripten.clang"
   },
   "networks": {
-    "1": {
+    "97": {
       "events": {
         "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
           "anonymous": false,
@@ -550,207 +552,13 @@
         }
       },
       "links": {},
-      "address": "0x027d7bc9f6a37600fe936cb98cea3e32ef82812e",
-      "transactionHash": "0x1e09f49b0ea3906d6a7b0a8a4aefde455abea60b18cd1df0abf547b8357fc6e2"
-    },
-    "3": {
-      "events": {
-        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "previousOwner",
-              "type": "address"
-            },
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "newOwner",
-              "type": "address"
-            }
-          ],
-          "name": "OwnershipTransferred",
-          "type": "event"
-        },
-        "0xbc7cd75a20ee27fd9adebab32041f755214dbc6bffa90cc0225b39da2e5c2d3b": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "implementation",
-              "type": "address"
-            }
-          ],
-          "name": "Upgraded",
-          "type": "event"
-        }
-      },
-      "links": {},
-      "address": "0x998a191008423737B74B9BDf6EdD46AC562DB3CE",
-      "transactionHash": "0x3a97c8e130d084dd75174a524e52d27f611cd0114d9eba6fe59a943c8d9db40b"
-    },
-    "4": {
-      "events": {
-        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "previousOwner",
-              "type": "address"
-            },
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "newOwner",
-              "type": "address"
-            }
-          ],
-          "name": "OwnershipTransferred",
-          "type": "event"
-        },
-        "0xbc7cd75a20ee27fd9adebab32041f755214dbc6bffa90cc0225b39da2e5c2d3b": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "implementation",
-              "type": "address"
-            }
-          ],
-          "name": "Upgraded",
-          "type": "event"
-        }
-      },
-      "links": {},
-      "address": "0xfE79009D3a833bd65204Eb109235843FC8914400",
-      "transactionHash": "0xcb524d953a2611eb75a39e752dc7c23666611cc0d344619207eaf3f40b13ff6f"
-    },
-    "18": {
-      "events": {
-        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "previousOwner",
-              "type": "address"
-            },
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "newOwner",
-              "type": "address"
-            }
-          ],
-          "name": "OwnershipTransferred",
-          "type": "event"
-        },
-        "0xbc7cd75a20ee27fd9adebab32041f755214dbc6bffa90cc0225b39da2e5c2d3b": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "implementation",
-              "type": "address"
-            }
-          ],
-          "name": "Upgraded",
-          "type": "event"
-        }
-      },
-      "links": {},
-      "address": "0x4D997F935b5cFD9872148017E99934bD3d33c146",
-      "transactionHash": "0xe23d580ab2b1b3eeb08324d9837d76db66b7af71d26348a2ebc9b1f1eb701b88"
-    },
-    "137": {
-      "events": {
-        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "previousOwner",
-              "type": "address"
-            },
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "newOwner",
-              "type": "address"
-            }
-          ],
-          "name": "OwnershipTransferred",
-          "type": "event"
-        },
-        "0xbc7cd75a20ee27fd9adebab32041f755214dbc6bffa90cc0225b39da2e5c2d3b": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "implementation",
-              "type": "address"
-            }
-          ],
-          "name": "Upgraded",
-          "type": "event"
-        }
-      },
-      "links": {},
-      "address": "0xeEB68dFE6152BBB38F674d717C8949Ab54949379",
-      "transactionHash": "0x2221e2baf971937f6692055fff720a2f327f32f25c2e1a71d4fac06de6cddfe2"
-    },
-    "80001": {
-      "events": {
-        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "previousOwner",
-              "type": "address"
-            },
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "newOwner",
-              "type": "address"
-            }
-          ],
-          "name": "OwnershipTransferred",
-          "type": "event"
-        },
-        "0xbc7cd75a20ee27fd9adebab32041f755214dbc6bffa90cc0225b39da2e5c2d3b": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "implementation",
-              "type": "address"
-            }
-          ],
-          "name": "Upgraded",
-          "type": "event"
-        }
-      },
-      "links": {},
-      "address": "0xc76E23b62294c4a6f92a86470cbD4897D9AaB356",
-      "transactionHash": "0x85d84667c814a4b6a55e0075c2dde58540c5fdd6d9eaf337ee61f0b1072db9f1"
+      "address": "0x3ff17DD8e0C3711Ef808d41dd80B8FdF24bdF695",
+      "transactionHash": "0x44f666278212e4e5c65d9949b8042135c60d6dfc2ae61c824b83b8bf2a4d500e"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-12-28T14:22:10.686Z",
+  "updatedAt": "2022-02-13T12:45:51.937Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {
