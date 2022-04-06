@@ -68,7 +68,6 @@ module.exports = {
     // rinkeby2: createNetwork("rinkeby2"),
     // polygon_mumbai: createNetwork("polygon_mumbai"),
     // polygon_mainnet: createNetwork("polygon_mainnet"),
-    // ganache: createNetwork("ganache"),
     // binance_testnet: createNetwork("binance_testnet"),
     // binance: createNetwork("binance"),
     ethereum: createNetwork("ethereum"),
