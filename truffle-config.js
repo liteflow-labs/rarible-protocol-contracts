@@ -28,7 +28,7 @@ function createNetwork(name) {
 	      }
       },
       from: json.address,
-      gas: 6000000,
+      gas: 6000000, // TODO: should use estimate gas...
       gasPrice: gasPrice + "000000000",
       network_id: json.network_id,
       skipDryRun: true,
@@ -70,7 +70,8 @@ module.exports = {
     // polygon_mainnet: createNetwork("polygon_mainnet"),
     // ganache: createNetwork("ganache"),
     // binance_testnet: createNetwork("binance_testnet"),
-    binance: createNetwork("binance"),
+    // binance: createNetwork("binance"),
+    ethereum: createNetwork("ethereum"),
   },
 
   compilers: {
