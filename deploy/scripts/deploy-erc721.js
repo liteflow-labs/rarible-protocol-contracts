@@ -24,12 +24,14 @@ module.exports = async function (callback) {
     const name = getArg('name')
     const symbol = getArg('symbol')
     const baseURI = getArg('baseURI')
+    const factoryAddress = getArg('factoryAddress')
     console.log('name:', name)
     console.log('symbol:', symbol)
     console.log('baseURI:', baseURI)
+    console.log('factoryAddress:', factoryAddress)
 
     const ERC721RaribleFactoryC2 = artifacts.require('ERC721RaribleFactoryC2')
-    const factory = await ERC721RaribleFactoryC2.deployed()
+    const factory = await ERC721RaribleFactoryC2.at(factoryAddress)
     console.log('using factory at', factory.address)
 
     const salt = randomBinary(32)
