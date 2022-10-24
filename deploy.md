@@ -61,6 +61,7 @@ Add the new values to the following sections and commit this file as well as the
 
 #### Factory address:
 
+- Mainnet 1: `0x363cEf6ab850371800cd2CffcAeF9F27104DB976`
 - BSC 56: `0x42153B8d08Bc01A4e70C6F1F8BE8053040751A58`
 - BSC Testnet 97: `0x9DEa39f488768ae692AD8d652924842a30E99584`
 - Goerli 5: `0xafC43CCB1f3f2E36001E325C1D2F8F89B7eba771`
@@ -77,6 +78,7 @@ npm run truffle -- exec ./scripts/deploy-erc721.js --network XXX --name "Weentar
 
 #### Factory address:
 
+- Mainnet 1: `0x499aB47958AA4ec14402DD49F1f15135211142B2`
 - BSC 56: `0x42741cECf928c5Daae0116B3745d0418C7a178E7`
 - BSC Testnet 97: `0xD7b40F58a572b501F2Cb6b78E07a8C1607340C87`
 - Goerli 5: `0x90Caf0CFBc25214cD021AC5FD4a2ea7Ba1436F1D`
