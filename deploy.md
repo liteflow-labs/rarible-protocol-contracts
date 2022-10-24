@@ -32,7 +32,7 @@ If you got the same error and the same place after restarting the command many t
 To do so, remove the following folders and files and start again:
 
 ```bash
-rm -fr build && rm -f .openzeppelin/unknown-CHAIN_ID.json
+rm -fr build && rm -f .openzeppelin/CHAIN.json
 ```
 
 Once deployed, copy ALL the outputs logs in a new file at the root named: `deploy-CHAIN_NAME.md`
@@ -45,7 +45,7 @@ Then extract the following info for the backend config:
 - copy smart contract from `deployed factory721 minimal at`
 - copy smart contract from `deployed factory1155 at`
 
-Add the new values to the following sections and commit this file as well as the new file `deploy-CHAIN_NAME.md`.
+Add the new values to the following sections and commit this file as well as the new file `deploy-CHAIN_NAME.md` and also `deploy/.openzeppelin/CHAIN.json`
 
 ### deploy erc721 token
 
