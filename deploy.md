@@ -66,6 +66,7 @@ Add the new values to the following sections and commit this file as well as the
 - BSC Testnet 97: `0x9DEa39f488768ae692AD8d652924842a30E99584`
 - Goerli 5: `0xafC43CCB1f3f2E36001E325C1D2F8F89B7eba771`
 - Polygon Mumbai 80001: `0xa9E46f215A6D759eC1d1B55Dc5951137d15421A3`
+- Polygon 137: `0x0eFA5B00E25986cE6b1469eB89FFE24952Eb8C2D`
 
 #### Command
 
@@ -83,6 +84,7 @@ npm run truffle -- exec ./scripts/deploy-erc721.js --network XXX --name "Weentar
 - BSC Testnet 97: `0xD7b40F58a572b501F2Cb6b78E07a8C1607340C87`
 - Goerli 5: `0x90Caf0CFBc25214cD021AC5FD4a2ea7Ba1436F1D`
 - Polygon Mumbai 80001: `0xb27F7B0238Ba3f65E074c30883CcaF4C39010672`
+- Polygon 137: `0xf6A72E573E909504F1667cF5aBd548d781A0b8B9`
 
 #### Command
 

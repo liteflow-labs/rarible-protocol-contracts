@@ -99,6 +99,11 @@ const mainnetLiteflow = {
   deploy_CryptoPunks: false,
   address_CryptoPunks: '0x0000000000000000000000000000000000000000',
 }
+const polygon = {
+  communityWallet: '0x4FD791220e007415f016d931735cA655DA9759eF',
+  deploy_CryptoPunks: false,
+  address_CryptoPunks: '0x0000000000000000000000000000000000000000',
+}
 
 let settings = {
   // default: def,
@@ -118,6 +123,7 @@ let settings = {
   goerli: goerli,
   mumbai: mumbai,
   mainnet: mainnetLiteflow,
+  polygon: polygon,
 }
 
 function getSettings(network) {
