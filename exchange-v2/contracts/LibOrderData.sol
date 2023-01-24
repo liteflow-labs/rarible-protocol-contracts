@@ -3,6 +3,7 @@
 pragma solidity 0.7.6;
 
 import "./LibOrder.sol";
+import "./lib/PerTrillionLibrary.sol";
 
 library LibOrderData {
     function parse(LibOrder.Order memory order) pure internal returns (LibOrderDataV2.DataV2 memory dataOrder) {
@@ -25,7 +26,7 @@ library LibOrderData {
     function payoutSet(address orderAddress) pure internal returns (LibPart.Part[] memory) {
         LibPart.Part[] memory payout = new LibPart.Part[](1);
         payout[0].account = payable(orderAddress);
-        payout[0].value = 10000;
+        payout[0].value = PerTrillionLibrary.TRILLION;
         return payout;
     }
 }

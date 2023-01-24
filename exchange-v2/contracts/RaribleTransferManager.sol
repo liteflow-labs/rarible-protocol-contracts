@@ -13,10 +13,10 @@ import "./LibFill.sol";
 import "./LibFeeSide.sol";
 import "./ITransferManager.sol";
 import "./TransferExecutor.sol";
-import "./lib/BpLibrary.sol";
+import "./lib/PerTrillionLibrary.sol";
 
 abstract contract RaribleTransferManager is OwnableUpgradeable, ITransferManager {
-    using BpLibrary for uint;
+    using PerTrillionLibrary for uint;
     using SafeMathUpgradeable for uint;
 
     uint public protocolFee;
@@ -92,7 +92,7 @@ abstract contract RaribleTransferManager is OwnableUpgradeable, ITransferManager
         LibAsset.AssetType memory matchNft,
         bytes4 transferDirection
     ) internal returns (uint totalAmount) {
-        totalAmount = calculateTotalAmount(amount, protocolFee, dataCalculate.originFees);
+        totalAmount = calculateTotalAmount(amount, uint96(protocolFee), dataCalculate.originFees);
         uint rest = transferProtocolFee(totalAmount, amount, from, matchCalculate, transferDirection);
         rest = transferRoyalties(matchCalculate, matchNft, rest, amount, from, transferDirection);
         (rest,) = transferFees(matchCalculate, rest, amount, dataCalculate.originFees, from, transferDirection, ORIGIN);
@@ -107,7 +107,7 @@ abstract contract RaribleTransferManager is OwnableUpgradeable, ITransferManager
         LibAsset.AssetType memory matchCalculate,
         bytes4 transferDirection
     ) internal returns (uint) {
-        (uint rest, uint fee) = subFeeInBp(totalAmount, amount, protocolFee.mul(2));
+        (uint rest, uint fee) = subFeeInTrillion(totalAmount, amount, uint96(protocolFee.mul(2)));
         if (fee > 0) {
             address tokenAddress = address(0);
             if (matchCalculate.assetClass == LibAsset.ERC20_ASSET_CLASS) {
@@ -131,8 +131,16 @@ abstract contract RaribleTransferManager is OwnableUpgradeable, ITransferManager
     ) internal returns (uint) {
         LibPart.Part[] memory fees = getRoyaltiesByAssetType(matchNft);
 
+        // transform royalties from basis point to trillion
+        for (uint256 i = 0; i < fees.length; i++) {
+            uint96 newValue = fees[i].value * 100000000;
+            // Add the require implemented in SafeMath lib
+            require(newValue / fees[i].value == 100000000, "SafeMath: multiplication overflow");
+            fees[i].value = newValue;
+        }
+
         (uint result, uint totalRoyalties) = transferFees(matchCalculate, rest, amount, fees, from, transferDirection, ROYALTY);
-        require(totalRoyalties <= 5000, "Royalties are too high (>50%)");
+        require(totalRoyalties <= 500000000000, "Royalties are too high (>50%)");
         return result;
     }
 
@@ -164,7 +172,7 @@ abstract contract RaribleTransferManager is OwnableUpgradeable, ITransferManager
         restValue = rest;
         for (uint256 i = 0; i < fees.length; i++) {
             totalFees = totalFees.add(fees[i].value);
-            (uint newRestValue, uint feeValue) = subFeeInBp(restValue, amount,  fees[i].value);
+            (uint newRestValue, uint feeValue) = subFeeInTrillion(restValue, amount,  fees[i].value);
             restValue = newRestValue;
             if (feeValue > 0) {
                 transfer(LibAsset.Asset(matchCalculate, feeValue), from,  fees[i].account, transferDirection, transferType);
@@ -179,19 +187,19 @@ abstract contract RaribleTransferManager is OwnableUpgradeable, ITransferManager
         LibPart.Part[] memory payouts,
         bytes4 transferDirection
     ) internal {
-        uint sumBps = 0;
+        uint sumPerTrillion = 0;
         uint restValue = amount;
         for (uint256 i = 0; i < payouts.length - 1; i++) {
-            uint currentAmount = amount.bp(payouts[i].value);
-            sumBps = sumBps.add(payouts[i].value);
+            uint currentAmount = amount.perTrillion(payouts[i].value);
+            sumPerTrillion = sumPerTrillion.add(payouts[i].value);
             if (currentAmount > 0) {
                 restValue = restValue.sub(currentAmount);
                 transfer(LibAsset.Asset(matchCalculate, currentAmount), from, payouts[i].account, transferDirection, PAYOUT);
             }
         }
         LibPart.Part memory lastPayout = payouts[payouts.length - 1];
-        sumBps = sumBps.add(lastPayout.value);
-        require(sumBps == 10000, "Sum payouts Bps not equal 100%");
+        sumPerTrillion = sumPerTrillion.add(lastPayout.value);
+        require(sumPerTrillion == PerTrillionLibrary.TRILLION, "Sum payouts sumPerTrillion not equal 100%");
         if (restValue > 0) {
             transfer(LibAsset.Asset(matchCalculate, restValue), from, lastPayout.account, transferDirection, PAYOUT);
         }
@@ -199,17 +207,17 @@ abstract contract RaribleTransferManager is OwnableUpgradeable, ITransferManager
 
     function calculateTotalAmount(
         uint amount,
-        uint feeOnTopBp,
+        uint96 feeOnTopPerTrillion,
         LibPart.Part[] memory orderOriginFees
     ) internal pure returns (uint total){
-        total = amount.add(amount.bp(feeOnTopBp));
+        total = amount.add(amount.perTrillion(feeOnTopPerTrillion));
         for (uint256 i = 0; i < orderOriginFees.length; i++) {
-            total = total.add(amount.bp(orderOriginFees[i].value));
+            total = total.add(amount.perTrillion(orderOriginFees[i].value));
         }
     }
 
-    function subFeeInBp(uint value, uint total, uint feeInBp) internal pure returns (uint newValue, uint realFee) {
-        return subFee(value, total.bp(feeInBp));
+    function subFeeInTrillion(uint value, uint total, uint96 feeInTrillion) internal pure returns (uint newValue, uint realFee) {
+        return subFee(value, total.perTrillion(feeInTrillion));
     }
 
     function subFee(uint value, uint fee) internal pure returns (uint newValue, uint realFee) {
