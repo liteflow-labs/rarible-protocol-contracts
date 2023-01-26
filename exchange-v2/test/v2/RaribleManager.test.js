@@ -152,8 +152,8 @@ contract("RaribleTransferManagerTest:doTransferTest()", accounts => {
 			await erc721.setApprovalForAll(transferProxy.address, true, {from: accounts[1]});
 			await erc1155.setApprovalForAll(transferProxy.address, true, {from: accounts[2]});
 			/*in this: accounts[3] - address originLeftOrder, 100 - originLeftOrderFee(bp%)*/
-			let addrOriginLeft = [[accounts[3], 100], [accounts[5], 300]];
-			let addrOriginRight = [[accounts[4], 200], [accounts[6], 400]];
+			let addrOriginLeft = [[accounts[3], 1], [accounts[5], 3]];
+			let addrOriginRight = [[accounts[4], 2], [accounts[6], 4]];
 			let encDataLeft = await encDataV1([ [[accounts[1], 10000]], addrOriginLeft]);
 			let encDataRight = await encDataV1([ [[accounts[2], 10000]], addrOriginRight]);
 			const left = Order(accounts[1], Asset(ERC721, enc(erc721.address, erc721TokenId1), 1), ZERO, Asset(ERC1155, enc(erc1155.address, erc1155TokenId1), 100), 1, 0, 0, ORDER_DATA_V1, encDataLeft);
