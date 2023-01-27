@@ -1,0 +1,790 @@
+{
+  "contractName": "PerTrillionLibrary",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "TRILLION",
+      "outputs": [
+        {
+          "internalType": "uint96",
+          "name": "",
+          "type": "uint96"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.6+commit.7338295f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"TRILLION\",\"outputs\":[{\"internalType\":\"uint96\",\"name\":\"\",\"type\":\"uint96\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"@rarible/exchange-v2/contracts/lib/PerTrillionLibrary.sol\":\"PerTrillionLibrary\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts-upgradeable/math/SafeMathUpgradeable.sol\":{\"keccak256\":\"0x0dd1e9b19801e3e7d900fbf4182d81e1afd23ad7be39504e33df6bbcba91d724\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5e30d594df25d0651c2cd6f85d856e5fc9f3dbae68d017e1da33eb3c7e2f1ecc\",\"dweb:/ipfs/QmPgkV99jZr3Zs9ex8dJ5j22oX4wDuDtMCnXNy67bTwgAB\"]},\"@rarible/exchange-v2/contracts/lib/PerTrillionLibrary.sol\":{\"keccak256\":\"0x9e55ae9f3b3cd21e5406b77c2d1b18d0841033dab99071225163510c787781d5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b1127a4229985e292dffc6f1ccabc59bd4a1e8af0f78edb056077bb37fdad070\",\"dweb:/ipfs/QmdhUCFk4TePaznYRs9LBh23WuUrUWkFFhAbtVqVrGbJN3\"]}},\"version\":1}",
+  "bytecode": "0x609e610024600b82828239805160001a607314601757fe5b30600052607381538281f3fe730000000000000000000000000000000000000000301460806040526004361060335760003560e01c80631be9db67146038575b600080fd5b603e605f565b604080516bffffffffffffffffffffffff9092168252519081900360200190f35b64e8d4a510008156fea2646970667358221220800539cd7e67dad60025b1efdacfba5d667ba5c813a61137a4215216b1a9516364736f6c63430007060033",
+  "deployedBytecode": "0x730000000000000000000000000000000000000000301460806040526004361060335760003560e01c80631be9db67146038575b600080fd5b603e605f565b604080516bffffffffffffffffffffffff9092168252519081900360200190f35b64e8d4a510008156fea2646970667358221220800539cd7e67dad60025b1efdacfba5d667ba5c813a61137a4215216b1a9516364736f6c63430007060033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "133:275:52:-:0;;;;;;;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "133:275:52:-:0;;;;;;;;;;;;;;;;;;;;;;;;206:47;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;240:13;206:47;:::o",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.7.6;\n\nimport '@openzeppelin/contracts-upgradeable/math/SafeMathUpgradeable.sol';\n\nlibrary PerTrillionLibrary {\n  using SafeMathUpgradeable for uint256;\n\n  uint96 public constant TRILLION = 1000000000000;\n\n  function perTrillion(uint256 value, uint96 ptValue)\n    internal\n    pure\n    returns (uint256)\n  {\n    return value.mul(ptValue).div(TRILLION);\n  }\n}\n",
+  "sourcePath": "@rarible/exchange-v2/contracts/lib/PerTrillionLibrary.sol",
+  "ast": {
+    "absolutePath": "@rarible/exchange-v2/contracts/lib/PerTrillionLibrary.sol",
+    "exportedSymbols": {
+      "PerTrillionLibrary": [
+        7077
+      ],
+      "SafeMathUpgradeable": [
+        805
+      ]
+    },
+    "id": 7078,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 7051,
+        "literals": [
+          "solidity",
+          "0.7",
+          ".6"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:22:52"
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts-upgradeable/math/SafeMathUpgradeable.sol",
+        "file": "@openzeppelin/contracts-upgradeable/math/SafeMathUpgradeable.sol",
+        "id": 7052,
+        "nodeType": "ImportDirective",
+        "scope": 7078,
+        "sourceUnit": 806,
+        "src": "57:74:52",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "fullyImplemented": true,
+        "id": 7077,
+        "linearizedBaseContracts": [
+          7077
+        ],
+        "name": "PerTrillionLibrary",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 7055,
+            "libraryName": {
+              "id": 7053,
+              "name": "SafeMathUpgradeable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 805,
+              "src": "170:19:52",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_SafeMathUpgradeable_$805",
+                "typeString": "library SafeMathUpgradeable"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "164:38:52",
+            "typeName": {
+              "id": 7054,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "194:7:52",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            }
+          },
+          {
+            "constant": true,
+            "functionSelector": "1be9db67",
+            "id": 7058,
+            "mutability": "constant",
+            "name": "TRILLION",
+            "nodeType": "VariableDeclaration",
+            "scope": 7077,
+            "src": "206:47:52",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint96",
+              "typeString": "uint96"
+            },
+            "typeName": {
+              "id": 7056,
+              "name": "uint96",
+              "nodeType": "ElementaryTypeName",
+              "src": "206:6:52",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint96",
+                "typeString": "uint96"
+              }
+            },
+            "value": {
+              "hexValue": "31303030303030303030303030",
+              "id": 7057,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "240:13:52",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_1000000000000_by_1",
+                "typeString": "int_const 1000000000000"
+              },
+              "value": "1000000000000"
+            },
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 7075,
+              "nodeType": "Block",
+              "src": "356:50:52",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 7072,
+                        "name": "TRILLION",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7058,
+                        "src": "392:8:52",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint96",
+                          "typeString": "uint96"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint96",
+                          "typeString": "uint96"
+                        }
+                      ],
+                      "expression": {
+                        "arguments": [
+                          {
+                            "id": 7069,
+                            "name": "ptValue",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 7062,
+                            "src": "379:7:52",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint96",
+                              "typeString": "uint96"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_uint96",
+                              "typeString": "uint96"
+                            }
+                          ],
+                          "expression": {
+                            "id": 7067,
+                            "name": "value",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 7060,
+                            "src": "369:5:52",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "id": 7068,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "mul",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 688,
+                          "src": "369:9:52",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
+                            "typeString": "function (uint256,uint256) pure returns (uint256)"
+                          }
+                        },
+                        "id": 7070,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "369:18:52",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "id": 7071,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "div",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 710,
+                      "src": "369:22:52",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
+                        "typeString": "function (uint256,uint256) pure returns (uint256)"
+                      }
+                    },
+                    "id": 7073,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "369:32:52",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 7066,
+                  "id": 7074,
+                  "nodeType": "Return",
+                  "src": "362:39:52"
+                }
+              ]
+            },
+            "id": 7076,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "perTrillion",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7063,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7060,
+                  "mutability": "mutable",
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7076,
+                  "src": "279:13:52",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7059,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "279:7:52",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7062,
+                  "mutability": "mutable",
+                  "name": "ptValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7076,
+                  "src": "294:14:52",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint96",
+                    "typeString": "uint96"
+                  },
+                  "typeName": {
+                    "id": 7061,
+                    "name": "uint96",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "294:6:52",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint96",
+                      "typeString": "uint96"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "278:31:52"
+            },
+            "returnParameters": {
+              "id": 7066,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7065,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7076,
+                  "src": "345:7:52",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7064,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "345:7:52",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "344:9:52"
+            },
+            "scope": 7077,
+            "src": "258:148:52",
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 7078,
+        "src": "133:275:52"
+      }
+    ],
+    "src": "33:376:52"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "@rarible/exchange-v2/contracts/lib/PerTrillionLibrary.sol",
+      "exportedSymbols": {
+        "PerTrillionLibrary": [
+          7077
+        ],
+        "SafeMathUpgradeable": [
+          805
+        ]
+      },
+      "license": "MIT"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.7",
+            ".6"
+          ]
+        },
+        "id": 7051,
+        "name": "PragmaDirective",
+        "src": "33:22:52"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 806,
+          "absolutePath": "@openzeppelin/contracts-upgradeable/math/SafeMathUpgradeable.sol",
+          "file": "@openzeppelin/contracts-upgradeable/math/SafeMathUpgradeable.sol",
+          "scope": 7078,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 7052,
+        "name": "ImportDirective",
+        "src": "57:74:52"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "library",
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            7077
+          ],
+          "name": "PerTrillionLibrary",
+          "scope": 7078
+        },
+        "children": [
+          {
+            "children": [
+              {
+                "attributes": {
+                  "name": "SafeMathUpgradeable",
+                  "referencedDeclaration": 805,
+                  "type": "library SafeMathUpgradeable"
+                },
+                "id": 7053,
+                "name": "UserDefinedTypeName",
+                "src": "170:19:52"
+              },
+              {
+                "attributes": {
+                  "name": "uint256",
+                  "type": "uint256"
+                },
+                "id": 7054,
+                "name": "ElementaryTypeName",
+                "src": "194:7:52"
+              }
+            ],
+            "id": 7055,
+            "name": "UsingForDirective",
+            "src": "164:38:52"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "functionSelector": "1be9db67",
+              "mutability": "constant",
+              "name": "TRILLION",
+              "scope": 7077,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint96",
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint96",
+                  "type": "uint96"
+                },
+                "id": 7056,
+                "name": "ElementaryTypeName",
+                "src": "206:6:52"
+              },
+              {
+                "attributes": {
+                  "hexvalue": "31303030303030303030303030",
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "lValueRequested": false,
+                  "token": "number",
+                  "type": "int_const 1000000000000",
+                  "value": "1000000000000"
+                },
+                "id": 7057,
+                "name": "Literal",
+                "src": "240:13:52"
+              }
+            ],
+            "id": 7058,
+            "name": "VariableDeclaration",
+            "src": "206:47:52"
+          },
+          {
+            "attributes": {
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "perTrillion",
+              "scope": 7077,
+              "stateMutability": "pure",
+              "virtual": false,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "value",
+                      "scope": 7076,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7059,
+                        "name": "ElementaryTypeName",
+                        "src": "279:7:52"
+                      }
+                    ],
+                    "id": 7060,
+                    "name": "VariableDeclaration",
+                    "src": "279:13:52"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "ptValue",
+                      "scope": 7076,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint96",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint96",
+                          "type": "uint96"
+                        },
+                        "id": 7061,
+                        "name": "ElementaryTypeName",
+                        "src": "294:6:52"
+                      }
+                    ],
+                    "id": 7062,
+                    "name": "VariableDeclaration",
+                    "src": "294:14:52"
+                  }
+                ],
+                "id": 7063,
+                "name": "ParameterList",
+                "src": "278:31:52"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "scope": 7076,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7064,
+                        "name": "ElementaryTypeName",
+                        "src": "345:7:52"
+                      }
+                    ],
+                    "id": 7065,
+                    "name": "VariableDeclaration",
+                    "src": "345:7:52"
+                  }
+                ],
+                "id": 7066,
+                "name": "ParameterList",
+                "src": "344:9:52"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 7066
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "uint256",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint96",
+                                  "typeString": "uint96"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "div",
+                              "referencedDeclaration": 710,
+                              "type": "function (uint256,uint256) pure returns (uint256)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "isStructConstructorCall": false,
+                                  "lValueRequested": false,
+                                  "names": [
+                                    null
+                                  ],
+                                  "tryCall": false,
+                                  "type": "uint256",
+                                  "type_conversion": false
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": [
+                                        {
+                                          "typeIdentifier": "t_uint96",
+                                          "typeString": "uint96"
+                                        }
+                                      ],
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "member_name": "mul",
+                                      "referencedDeclaration": 688,
+                                      "type": "function (uint256,uint256) pure returns (uint256)"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 7060,
+                                          "type": "uint256",
+                                          "value": "value"
+                                        },
+                                        "id": 7067,
+                                        "name": "Identifier",
+                                        "src": "369:5:52"
+                                      }
+                                    ],
+                                    "id": 7068,
+                                    "name": "MemberAccess",
+                                    "src": "369:9:52"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 7062,
+                                      "type": "uint96",
+                                      "value": "ptValue"
+                                    },
+                                    "id": 7069,
+                                    "name": "Identifier",
+                                    "src": "379:7:52"
+                                  }
+                                ],
+                                "id": 7070,
+                                "name": "FunctionCall",
+                                "src": "369:18:52"
+                              }
+                            ],
+                            "id": 7071,
+                            "name": "MemberAccess",
+                            "src": "369:22:52"
+                          },
+                          {
+                            "attributes": {
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7058,
+                              "type": "uint96",
+                              "value": "TRILLION"
+                            },
+                            "id": 7072,
+                            "name": "Identifier",
+                            "src": "392:8:52"
+                          }
+                        ],
+                        "id": 7073,
+                        "name": "FunctionCall",
+                        "src": "369:32:52"
+                      }
+                    ],
+                    "id": 7074,
+                    "name": "Return",
+                    "src": "362:39:52"
+                  }
+                ],
+                "id": 7075,
+                "name": "Block",
+                "src": "356:50:52"
+              }
+            ],
+            "id": 7076,
+            "name": "FunctionDefinition",
+            "src": "258:148:52"
+          }
+        ],
+        "id": 7077,
+        "name": "ContractDefinition",
+        "src": "133:275:52"
+      }
+    ],
+    "id": 7078,
+    "name": "SourceUnit",
+    "src": "33:376:52"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.6+commit.7338295f.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2023-01-27T02:03:58.083Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
