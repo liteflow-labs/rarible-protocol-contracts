@@ -13,4 +13,5 @@ truffle test \
         ./test/contracts/v2/TestRoyaltiesRegistry.sol \
         ./test/contracts/tokens/TestERC721WithRoyaltyV1OwnableUpgradeable.sol \
         ./test/contracts/v2/AssetMatcherCollectionTest.sol \
-        --compile-all
+        --compile-all \
+        --bail
