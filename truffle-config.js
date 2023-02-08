@@ -1,15 +1,14 @@
 const os = require('os')
 
-let apiKey
+let apiKeys = {}
 try {
   console.log(
     `Loading etherscan key from ${os.homedir() + '/.ethereum/etherscan.json'}`,
   )
-  apiKey = require(os.homedir() + '/.ethereum/etherscan.json').apiKey
+  apiKeys = require(os.homedir() + '/.ethereum/etherscan.json')
   console.log('loaded etherscan api key')
 } catch {
   console.log('unable to load etherscan key from config')
-  apiKey = 'UNKNOWN'
 }
 
 function createNetwork(name) {
@@ -60,9 +59,7 @@ function createProvider(address, key, url) {
 }
 
 module.exports = {
-  api_keys: {
-    etherscan: apiKey,
-  },
+  api_keys: apiKeys,
 
   plugins: ['truffle-plugin-verify'],
 
