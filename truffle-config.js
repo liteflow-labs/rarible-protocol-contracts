@@ -70,7 +70,7 @@ module.exports = {
     // e2e: createNetwork("e2e"),
     // ops: createNetwork("ops"),
     // ropsten: createNetwork("ropsten"),
-    // mainnet: createNetwork('mainnet'),
+    mainnet: createNetwork('mainnet'),
     // rinkeby: createNetwork("rinkeby"),
     // rinkeby2: createNetwork("rinkeby2"),
     // polygon_mumbai: createNetwork("polygon_mumbai"),
@@ -79,7 +79,7 @@ module.exports = {
     // binance: createNetwork("binance"),
     // goerli: createNetwork('goerli'),
     // mumbai: createNetwork('mumbai'),
-    polygon: createNetwork('polygon'),
+    // polygon: createNetwork('polygon'),
   },
 
   compilers: {

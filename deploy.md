@@ -57,43 +57,27 @@ Then extract the following info for the backend config:
 
 Add the new values to the following sections and commit this file as well as the new file `deploy-CHAIN_NAME.md` and also `deploy/.openzeppelin/CHAIN.json`
 
+### Verify contracts
+
+```bash
+npm run truffle -- run verify ExchangeV2 ERC20TransferProxy TransferProxy ERC721RaribleFactoryC2 ERC1155RaribleFactoryC2 --verifiers=etherscan --network XXX
+```
+
 ### Deploy erc721 token
-
-#### Factory address:
-
-- Mainnet 1: `0x363cEf6ab850371800cd2CffcAeF9F27104DB976`
-- BSC 56: `0x42153B8d08Bc01A4e70C6F1F8BE8053040751A58`
-- BSC Testnet 97: `0x9DEa39f488768ae692AD8d652924842a30E99584`
-- Goerli 5: `0xafC43CCB1f3f2E36001E325C1D2F8F89B7eba771`
-- Polygon Mumbai 80001: `0xa9E46f215A6D759eC1d1B55Dc5951137d15421A3`
-- Polygon 137: `0x0eFA5B00E25986cE6b1469eB89FFE24952Eb8C2D`
-
-#### Command
 
 ```bash
 cd deploy
-npm run truffle -- exec ./scripts/deploy-erc721.js --network XXX --name "Weentar ERC721" --symbol WNTR721 --baseURI ipfs:/ --factoryAddress 0x42153B8d08Bc01A4e70C6F1F8BE8053040751A58
+npm run truffle -- exec ./scripts/deploy-erc721.js --network XXX --name "XXX" --symbol "XXX" --baseURI ipfs:/ --factoryAddress XXX
 ```
 
 ### Deploy erc1155 token
 
-#### Factory address:
-
-- Mainnet 1: `0x499aB47958AA4ec14402DD49F1f15135211142B2`
-- BSC 56: `0x42741cECf928c5Daae0116B3745d0418C7a178E7`
-- BSC Testnet 97: `0xD7b40F58a572b501F2Cb6b78E07a8C1607340C87`
-- Goerli 5: `0x90Caf0CFBc25214cD021AC5FD4a2ea7Ba1436F1D`
-- Polygon Mumbai 80001: `0xb27F7B0238Ba3f65E074c30883CcaF4C39010672`
-- Polygon 137: `0xf6A72E573E909504F1667cF5aBd548d781A0b8B9`
-
-#### Command
-
 ```bash
 cd deploy
-npm run truffle -- exec ./scripts/deploy-erc1155.js --network XXX --name "Weentar ERC1155" --symbol WNTR1155 --baseURI ipfs:/ --factoryAddress 0x42741cECf928c5Daae0116B3745d0418C7a178E7
+npm run truffle -- exec ./scripts/deploy-erc1155.js --network XXX --name "XXX" --symbol "XXX" --baseURI ipfs:/ --factoryAddress XXX
 ```
 
-### deploy tokens erc20
+### Deploy tokens erc20
 
 ```bash
 cd erc20
