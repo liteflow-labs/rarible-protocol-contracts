@@ -1,7 +1,3 @@
-const CryptoPunksMarket = artifacts.require('CryptoPunksMarket');
-const PunkTransferProxy = artifacts.require('PunkTransferProxy');
-const ExchangeV2 = artifacts.require('ExchangeV2');
-
 const { getSettings } = require("./config.js")
 const { CRYPTO_PUNKS } = require("@rarible/exchange-v2/test/assets.js");
 
@@ -12,6 +8,10 @@ module.exports = async function (deployer, network) {
   if (!settings.deploy_CryptoPunks && settings.address_CryptoPunks === "0x0000000000000000000000000000000000000000") {
     return;
   }
+
+  const CryptoPunksMarket = artifacts.require('CryptoPunksMarket');
+  const PunkTransferProxy = artifacts.require('PunkTransferProxy');
+  const ExchangeV2 = artifacts.require('ExchangeV2');
 
   if (settings.deploy_CryptoPunks) {
     await deployer.deploy(CryptoPunksMarket, { gas: 4500000 });

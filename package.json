@@ -26,7 +26,8 @@
         "bootstrap": "lerna bootstrap --no-ci && lerna link",
         "bootstrap:ci": "lerna bootstrap --ci && lerna link",
         "lerna-publish": "lerna publish",
-        "lerna-publish-only": "lerna publish from-package"
+        "lerna-publish-only": "lerna publish from-package",
+        "truffle": "truffle"
     },
     "devDependencies": {
         "@openzeppelin/contracts": "3.4.0",

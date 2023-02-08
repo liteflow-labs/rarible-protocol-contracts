@@ -3,13 +3,6 @@ const { getSettings } = require("./config.js")
 const ERC20TransferProxy = artifacts.require('ERC20TransferProxy');
 const TransferProxy = artifacts.require('TransferProxy');
 
-let ExchangeStateV1 = artifacts.require("ExchangeStateV1.sol");
-let ExchangeOrdersHolderV1 = artifacts.require("ExchangeOrdersHolderV1.sol");
-let TransferProxyForDeprecated = artifacts.require("TransferProxyForDeprecated.sol");
-let ExchangeV1 = artifacts.require("ExchangeV1.sol");
-let RaribleToken = artifacts.require("RaribleToken.sol");
-let MintableToken = artifacts.require("MintableToken.sol");
-
 module.exports = async function (deployer, network) {
   const settings = getSettings(network);
   console.log(settings)
@@ -17,6 +10,13 @@ module.exports = async function (deployer, network) {
   if (!settings.deploy_legacy) {
     return;
   }
+
+  let ExchangeStateV1 = artifacts.require("ExchangeStateV1.sol");
+  let ExchangeOrdersHolderV1 = artifacts.require("ExchangeOrdersHolderV1.sol");
+  let TransferProxyForDeprecated = artifacts.require("TransferProxyForDeprecated.sol");
+  let ExchangeV1 = artifacts.require("ExchangeV1.sol");
+  let RaribleToken = artifacts.require("RaribleToken.sol");
+  let MintableToken = artifacts.require("MintableToken.sol");
 
   const transferProxy = (await TransferProxy.deployed());
   const erc20TransferProxy = (await ERC20TransferProxy.deployed());
