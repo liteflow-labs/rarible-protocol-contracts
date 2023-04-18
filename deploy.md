@@ -23,7 +23,9 @@ Create a file in `~/.ethereum/etherscan.json` with the following content:
 
 ```json
 {
-  "apiKey": "XXX"
+  "etherscan": "XXX",
+  "polygonscan": "XXX",
+  "bscscan": "XXX"
 }
 ```
 
@@ -60,8 +62,36 @@ Add the new values to the following sections and commit this file as well as the
 ### Verify contracts
 
 ```bash
-npm run truffle -- run verify ExchangeV2 ERC20TransferProxy TransferProxy ERC721RaribleFactoryC2 ERC1155RaribleFactoryC2 --verifiers=etherscan --network XXX
+npm run truffle -- run verify \
+  ExchangeV2 \
+  ERC20TransferProxy \
+  TransferProxy \
+  ERC721RaribleFactoryC2 \
+  ERC1155RaribleFactoryC2 \
+  ERC1155Rarible \
+  ERC721RaribleMinimal \
+  RoyaltiesRegistry \
+  --verifiers=etherscan \
+  --network XXX
 ```
+
+You can also manually set the contract address if they are not found locally:
+
+```bash
+npm run truffle -- run verify \
+  ExchangeV2@0x332a1cae13ffd298d4a477e8d910d67a854feb9d \
+  ERC20TransferProxy@0xbb71e9498617ba0026601f87876e59be96fc3314 \
+  TransferProxy@0x917a509ac87b17aafd241d9c0cd030f89c44ae85 \
+  ERC721RaribleFactoryC2@0x363cef6ab850371800cd2cffcaef9f27104db976 \
+  ERC1155RaribleFactoryC2@0x499ab47958aa4ec14402dd49f1f15135211142b2 \
+  ERC1155Rarible@0x127f03c14c08130dDAc83B8698F0FF2b4f41AE87 \
+  ERC721RaribleMinimal@0xC74A89214fe516F10d59989CbACa838EA6DAfcA8 \
+  RoyaltiesRegistry@0x4083e25a0f32418d32Ce699B257f566b56Ec7D16 \
+  --verifiers=etherscan \
+  --network mainnet
+```
+
+<!-- TODO: Find a way to verify BeaconProxy contract -->
 
 ### Deploy erc721 token
 
@@ -81,7 +111,7 @@ npm run truffle -- exec ./scripts/deploy-erc1155.js --network XXX --name "XXX" -
 
 ```bash
 cd erc20
-npm run truffle -- deploy
+npm run truffle -- deploy --network XXX
 ```
 
 - copy smart contract address of `ERC20Test`

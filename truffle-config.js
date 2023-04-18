@@ -1,15 +1,14 @@
 const os = require('os')
 
-let apiKey
+let apiKeys = {}
 try {
   console.log(
     `Loading etherscan key from ${os.homedir() + '/.ethereum/etherscan.json'}`,
   )
-  apiKey = require(os.homedir() + '/.ethereum/etherscan.json').apiKey
+  apiKeys = require(os.homedir() + '/.ethereum/etherscan.json')
   console.log('loaded etherscan api key')
 } catch {
   console.log('unable to load etherscan key from config')
-  apiKey = 'UNKNOWN'
 }
 
 function createNetwork(name) {
@@ -36,8 +35,8 @@ function createNetwork(name) {
         }
       },
       from: json.address,
-      gas: 6000000, // TODO: should use estimate gas...
-      gasPrice: gasPrice,
+      // gas: 6000000, // TODO: should use estimate gas...
+      // gasPrice: gasPrice,
       network_id: json.network_id,
       skipDryRun: true,
       // networkCheckTimeout: 4 * 1000 * 1000 // 500000
@@ -60,9 +59,7 @@ function createProvider(address, key, url) {
 }
 
 module.exports = {
-  api_keys: {
-    etherscan: apiKey,
-  },
+  api_keys: apiKeys,
 
   plugins: ['truffle-plugin-verify'],
 
@@ -70,7 +67,7 @@ module.exports = {
     // e2e: createNetwork("e2e"),
     // ops: createNetwork("ops"),
     // ropsten: createNetwork("ropsten"),
-    mainnet: createNetwork('mainnet'),
+    // mainnet: createNetwork('mainnet'),
     // rinkeby: createNetwork("rinkeby"),
     // rinkeby2: createNetwork("rinkeby2"),
     // polygon_mumbai: createNetwork("polygon_mumbai"),
@@ -80,6 +77,7 @@ module.exports = {
     // goerli: createNetwork('goerli'),
     // mumbai: createNetwork('mumbai'),
     // polygon: createNetwork('polygon'),
+    ultron_testnet: createNetwork('ultron_testnet'),
   },
 
   compilers: {
