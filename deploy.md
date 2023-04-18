@@ -70,6 +70,7 @@ npm run truffle -- run verify \
   ERC1155RaribleFactoryC2 \
   ERC1155Rarible \
   ERC721RaribleMinimal \
+  RoyaltiesRegistry \
   --verifiers=etherscan \
   --network XXX
 ```
@@ -85,6 +86,7 @@ npm run truffle -- run verify \
   ERC1155RaribleFactoryC2@0x499ab47958aa4ec14402dd49f1f15135211142b2 \
   ERC1155Rarible@0x127f03c14c08130dDAc83B8698F0FF2b4f41AE87 \
   ERC721RaribleMinimal@0xC74A89214fe516F10d59989CbACa838EA6DAfcA8 \
+  RoyaltiesRegistry@0x4083e25a0f32418d32Ce699B257f566b56Ec7D16 \
   --verifiers=etherscan \
   --network mainnet
 ```
@@ -109,7 +111,7 @@ npm run truffle -- exec ./scripts/deploy-erc1155.js --network XXX --name "XXX" -
 
 ```bash
 cd erc20
-npm run truffle -- deploy
+npm run truffle -- deploy --network XXX
 ```
 
 - copy smart contract address of `ERC20Test`

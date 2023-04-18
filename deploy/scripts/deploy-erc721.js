@@ -47,7 +47,7 @@ module.exports = async function (callback) {
       name,
       symbol,
       baseURI,
-      baseURI,
+      baseURI, // FIXME: this is the contract URI. Can be empty like on the backend.
       salt,
     )
     console.log('tx:', tx)
