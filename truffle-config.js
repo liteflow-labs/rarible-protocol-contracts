@@ -35,8 +35,8 @@ function createNetwork(name) {
         }
       },
       from: json.address,
-      gas: 6000000, // TODO: should use estimate gas...
-      gasPrice: gasPrice,
+      // gas: 6000000, // TODO: should use estimate gas...
+      // gasPrice: gasPrice,
       network_id: json.network_id,
       skipDryRun: true,
       // networkCheckTimeout: 4 * 1000 * 1000 // 500000
@@ -67,7 +67,7 @@ module.exports = {
     // e2e: createNetwork("e2e"),
     // ops: createNetwork("ops"),
     // ropsten: createNetwork("ropsten"),
-    mainnet: createNetwork('mainnet'),
+    // mainnet: createNetwork('mainnet'),
     // rinkeby: createNetwork("rinkeby"),
     // rinkeby2: createNetwork("rinkeby2"),
     // polygon_mumbai: createNetwork("polygon_mumbai"),
@@ -77,6 +77,7 @@ module.exports = {
     // goerli: createNetwork('goerli'),
     // mumbai: createNetwork('mumbai'),
     // polygon: createNetwork('polygon'),
+    ultron_testnet: createNetwork('ultron_testnet'),
   },
 
   compilers: {
