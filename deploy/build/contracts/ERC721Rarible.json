@@ -15702,10 +15702,15 @@
       "links": {},
       "address": "0xf965E2781FDA7C5dCdc1Cbe30a602Fbc9D9e4cc6",
       "transactionHash": "0x85f1c7c48525657fd15f328335ac792b22feb47bb9b0424d8c9aef11eae756a4"
+    },
+    "80001": {
+      "events": {},
+      "links": {},
+      "address": "0x307D2AE9472f311d0a413F048DA1B4Ed2F19333c"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2023-02-08T05:04:01.457Z",
+  "updatedAt": "2023-04-18T08:30:31.101Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

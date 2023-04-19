@@ -25639,10 +25639,15 @@
       "links": {},
       "address": "0x2cCDFC84E3Aaae63d5bc1584381596F452eA5872",
       "transactionHash": "0xe53fd48aa3df43c970751e6be0f329da52f024a26f59d8e8a0762b652ba746ad"
+    },
+    "80001": {
+      "events": {},
+      "links": {},
+      "address": "0xD97Ed445D402be72DBF1352eEB3B2acC795E10e2"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2023-02-08T05:05:26.532Z",
+  "updatedAt": "2023-04-18T08:31:40.570Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

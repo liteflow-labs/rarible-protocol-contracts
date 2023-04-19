@@ -19785,10 +19785,15 @@
       "links": {},
       "address": "0xeFBdD3BbB16Aa79F59802aD8f45D6d5819b558f3",
       "transactionHash": "0x771eb75dee26db754b624b99b57df40fca6ab91fd1b23e0f97501ca1883f23a1"
+    },
+    "80001": {
+      "events": {},
+      "links": {},
+      "address": "0x8f17059075B9D34BF376ec9fCC9B14E8651A3d5E"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2023-02-08T05:03:26.151Z",
+  "updatedAt": "2023-04-18T08:30:02.476Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
