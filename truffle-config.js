@@ -75,8 +75,8 @@ module.exports = {
     // binance_testnet: createNetwork('binance_testnet'),
     // binance: createNetwork("binance"),
     // goerli: createNetwork('goerli'),
-    mumbai: createNetwork('mumbai'),
-    // polygon: createNetwork('polygon'),
+    // mumbai: createNetwork('mumbai'),
+    polygon: createNetwork('polygon'),
     // ultron_testnet: createNetwork('ultron_testnet'),
   },
 

@@ -18002,6 +18002,12 @@
       "address": "0x7e649Af204BF705F315bA2eE41D27C56bAdb0dE6",
       "transactionHash": "0x5e58875c1a89f452b89ee100d2a2f2bd94cceb6fd9dd2d31b487dea40ed6c8be"
     },
+    "137": {
+      "events": {},
+      "links": {},
+      "address": "0xC663bc5c70815338eE8c4756c69A435B0FFbe5A3",
+      "transactionHash": "0x0d0a15dfa4e8e6bc7988b07c946de75bdfca50c924e9e289fa39df83b17dda63"
+    },
     "80001": {
       "events": {},
       "links": {},
@@ -18010,7 +18016,7 @@
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2023-04-18T08:30:02.487Z",
+  "updatedAt": "2023-04-19T04:54:52.110Z",
   "networkType": "ethereum",
   "devdoc": {
     "details": "This contract is for creating proxy to access ERC721Rarible token. The beacon should be initialized before call ERC721RaribleFactoryC2 constructor.",

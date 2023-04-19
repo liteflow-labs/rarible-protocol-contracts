@@ -1,0 +1,527 @@
+➜ deploy git:(feature/increase-fees-precision-2) ✗ npm run truffle -- migrate --network polygon
+
+> @rarible/deploy@0.0.2 truffle
+> truffle migrate --network polygon
+
+Loading etherscan key from /Users/nico/.ethereum/etherscan.json
+loaded etherscan api key
+creating provider for address: 0x4FD791220e007415f016d931735cA655DA9759eF
+
+# Compiling your contracts...
+
+> Compiling ./contracts/AssetMatchersImport.sol
+> Compiling ./contracts/ExchangeV2Import.sol
+> Compiling ./contracts/RoyaltiesRegistryImport.sol
+> Compiling ./contracts/TokensImport.sol
+> Compiling ./contracts/TransferProxiesImport.sol
+> Compilation warnings encountered:
+
+    @rarible/tokens/contracts/erc-1155/ERC1155BaseURI.sol:33:9: Warning: This declaration shadows an existing declaration.
+        string memory _tokenURI = _tokenURIs[tokenId];
+        ^---------------------^
+
+@rarible/tokens/contracts/erc-1155/ERC1155BaseURI.sol:32:5: The shadowed declaration is here:
+function _tokenURI(uint256 tokenId) internal view virtual returns (string memory) {
+^ (Relevant source part starts here and spans across multiple lines).
+,@rarible/exchange-v2/contracts/interfaces/IERC1271.sol:16:5: Warning: Interface functions are implicitly "virtual"
+function isValidSignature(bytes32 \_hash, bytes calldata \_signature) virtual external view returns (bytes4 magicValue);
+^--------------------------------------------------------------------------------------------------------------------^
+,@openzeppelin/contracts/access/Ownable.sol:26:5: Warning: Visibility for constructor is ignored. If you want the contract to be non-deployable, making it "abstract" is sufficient.
+constructor () internal {
+^ (Relevant source part starts here and spans across multiple lines).
+,@openzeppelin/contracts/proxy/BeaconProxy.sol:35:5: Warning: Visibility for constructor is ignored. If you want the contract to be non-deployable, making it "abstract" is sufficient.
+constructor(address beacon, bytes memory data) public payable {
+^ (Relevant source part starts here and spans across multiple lines).
+,@openzeppelin/contracts/proxy/UpgradeableBeacon.sol:27:5: Warning: Visibility for constructor is ignored. If you want the contract to be non-deployable, making it "abstract" is sufficient.
+constructor(address implementation_) public {
+^ (Relevant source part starts here and spans across multiple lines).
+,@rarible/exchange-v2/contracts/RaribleTransferManager.sol:146:14: Warning: Unused local variable.
+(address token, LibERC1155LazyMint.Mint1155Data memory data) = abi.decode(matchNft.data, (address, LibERC1155LazyMint.Mint1155Data));
+^-----------^
+,@rarible/exchange-v2/contracts/RaribleTransferManager.sol:149:14: Warning: Unused local variable.
+(address token, LibERC721LazyMint.Mint721Data memory data) = abi.decode(matchNft.data, (address, LibERC721LazyMint.Mint721Data));
+^-----------^
+,@rarible/custom-matchers/contracts/AssetMatcherCollection.sol:17:5: Warning: Function state mutability can be restricted to pure
+function matchAssets(LibAsset.Asset ... turns (LibAsset.AssetType memory) {
+^ (Relevant source part starts here and spans across multiple lines).
+,@rarible/exchange-v2/contracts/AssetMatcher.sol:68:5: Warning: Function state mutability can be restricted to pure
+function simpleMatch(LibAsset.Asset ... turns (LibAsset.AssetType memory) {
+^ (Relevant source part starts here and spans across multiple lines).
+,@rarible/royalties/contracts/LibRoyalties2981.sol:15:5: Warning: Function state mutability can be restricted to pure
+function calculateRoyalties(address to, uint256 amount) internal view returns (LibPart.Part[] memory) {
+^ (Relevant source part starts here and spans across multiple lines).
+,@rarible/tokens/contracts/erc-721/ERC721Upgradeable.sol:389:5: Warning: Function state mutability can be restricted to view
+function \_burned(uint256 tokenId) internal returns (bool) {
+^ (Relevant source part starts here and spans across multiple lines).
+
+> Everything is up to date, there is nothing to compile.
+
+# Starting migrations...
+
+> Network name: 'polygon'
+> Network id: 137
+> Block gas limit: 30000000 (0x1c9c380)
+
+# 1_initial_migration.js
+
+Deploying 'Migrations'
+
+---
+
+> transaction hash: 0xd58b39abac09a39641a1391eafe16a50aed779f9eb6102db170dcb0f4cdee8f8
+> Blocks: 4 Seconds: 8
+> contract address: 0x3DAb1a92FBF9ef37224D858DCbe91d28122A1707
+> block number: 41697685
+> block timestamp: 1681879378
+> account: 0x4FD791220e007415f016d931735cA655DA9759eF
+> balance: 473.561221356489832794
+> gas used: 155006 (0x25d7e)
+> gas price: 244.351918701 gwei
+> value sent: 0 ETH
+> total cost: 0.037876013510167206 ETH
+
+> Saving migration to chain.
+> Saving artifacts
+
+---
+
+> Total cost: 0.037876013510167206 ETH
+
+# 2_initial_RoyaltiesRegistry.js
+
+Deploying 'TransparentUpgradeableProxy'
+
+---
+
+> transaction hash: 0xbdd8549e05afc37ec3647b333a57f411bce736e79e1683f04e0296ad5ff53daa
+> Blocks: 10 Seconds: 20
+> contract address: 0xcf8Ead48D46072205Cca830781a9E3DbaE0A9750
+> block number: 41697707
+> block timestamp: 1681879424
+> account: 0x4FD791220e007415f016d931735cA655DA9759eF
+> balance: 473.389382182404515932
+> gas used: 642191 (0x9cc8f)
+> gas price: 250.693484547 gwei
+> value sent: 0 ETH
+> total cost: 0.160993099534722477 ETH
+
+deployed royaltiesRegistry at 0xcf8Ead48D46072205Cca830781a9E3DbaE0A9750
+
+> Saving migration to chain.
+> Saving artifacts
+
+---
+
+> Total cost: 0.160993099534722477 ETH
+
+# 3_royalties_provider_v2legacy.js
+
+> Saving migration to chain.
+
+---
+
+> Total cost: 0 ETH
+
+# 4_royalties_provider_art_blocks.js
+
+> Saving migration to chain.
+
+---
+
+> Total cost: 0 ETH
+
+# 5_initial_transfer_proxies.js
+
+Deploying 'TransferProxy'
+
+---
+
+> transaction hash: 0x03188772b638df69f372e1fc7a0584ea34617935cf31a7bd8d229688aa081a41
+> Blocks: 2 Seconds: 4
+> contract address: 0x4F90b87915eF10fd91a81DBf687879f3d3e94bfA
+> block number: 41697734
+> block timestamp: 1681879482
+> account: 0x4FD791220e007415f016d931735cA655DA9759eF
+> balance: 473.204549123673790162
+> gas used: 648927 (0x9e6df)
+> gas price: 249.111416185 gwei
+> value sent: 0 ETH
+> total cost: 0.161655123970683495 ETH
+
+deployed transferProxy at 0x4F90b87915eF10fd91a81DBf687879f3d3e94bfA
+
+Deploying 'ERC20TransferProxy'
+
+---
+
+> transaction hash: 0x8cdc2c429934ed5fb7d8c64b615d78f95b42b36856fcd7f5f6d37fac4d9303aa
+> Blocks: 13 Seconds: 28
+> contract address: 0x5b6674CF3D4E6F07E9Da6bB21e009e11D174cC54
+> block number: 41697764
+> block timestamp: 1681879546
+> account: 0x4FD791220e007415f016d931735cA655DA9759eF
+> balance: 473.031490344948896948
+> gas used: 570395 (0x8b41b)
+> gas price: 274.593186763 gwei
+> value sent: 0 ETH
+> total cost: 0.156626580763681385 ETH
+
+deployed erc20TransferProxy at 0x5b6674CF3D4E6F07E9Da6bB21e009e11D174cC54
+
+Deploying 'ERC721LazyMintTransferProxy'
+
+---
+
+> transaction hash: 0x96e7d8ec9bad5330e21c0a8cb95b26916e31ab40c41fb8c7e2c637adc7c352d0
+> Blocks: 5 Seconds: 9
+> contract address: 0x00459E083257fb29f43Bdad453427C13F67a1FF2
+> block number: 41697773
+> block timestamp: 1681879564
+> account: 0x4FD791220e007415f016d931735cA655DA9759eF
+> balance: 472.780084080475767964
+> gas used: 849009 (0xcf471)
+> gas price: 272.70977059 gwei
+> value sent: 0 ETH
+> total cost: 0.23153304961884531 ETH
+
+deployed erc721LazyProxy at 0x00459E083257fb29f43Bdad453427C13F67a1FF2
+
+Deploying 'ERC1155LazyMintTransferProxy'
+
+---
+
+> transaction hash: 0xe77f3a2400cf391c5a9bd7e7672d5e5935c5e8f90f19168c0944f7ba11f8e7e3
+> Blocks: 4 Seconds: 8
+> contract address: 0xA6D3a69833827655c092a6Bb9b11B109026b2f0c
+> block number: 41697783
+> block timestamp: 1681879586
+> account: 0x4FD791220e007415f016d931735cA655DA9759eF
+> balance: 472.54565362080077854
+> gas used: 837104 (0xcc5f0)
+> gas price: 258.312115094 gwei
+> value sent: 0 ETH
+> total cost: 0.216234104793647776 ETH
+
+deployed erc1155LazyProxy at 0xA6D3a69833827655c092a6Bb9b11B109026b2f0c
+
+> Saving migration to chain.
+> Saving artifacts
+
+---
+
+> Total cost: 0.766048859146857966 ETH
+
+# 6_tokens_and_factories.js
+
+Deploying 'TransparentUpgradeableProxy'
+
+---
+
+> transaction hash: 0xd2cc1d1fcf491eb6f166e7f328ce4f3933c5c555a4492a0e72d75a73206eb499
+> Blocks: 17 Seconds: 36
+> contract address: 0xeeD04760e93AFAc6a820927794564Df092bf7b31
+> block number: 41697815
+> block timestamp: 1681879654
+> account: 0x4FD791220e007415f016d931735cA655DA9759eF
+> balance: 472.286972024360429701
+> gas used: 950284 (0xe800c)
+> gas price: 247.180291861 gwei
+> value sent: 0 ETH
+> total cost: 0.234891476470838524 ETH
+
+deployed erc721 at 0xeeD04760e93AFAc6a820927794564Df092bf7b31
+
+Deploying 'TransparentUpgradeableProxy'
+
+---
+
+> transaction hash: 0x089847865d845b9a57e829ce9793d3b7187073f44ff3f7b823588443ba109fbe
+> Blocks: 4 Seconds: 8
+> contract address: 0xAC533015a2661265D607d0772259e8d7C86732aB
+> block number: 41697823
+> block timestamp: 1681879670
+> account: 0x4FD791220e007415f016d931735cA655DA9759eF
+> balance: 472.044417110746754098
+> gas used: 933307 (0xe3dbb)
+> gas price: 259.887597129 gwei
+> value sent: 0 ETH
+> total cost: 0.242554913613675603 ETH
+
+deployed erc1155 at 0xAC533015a2661265D607d0772259e8d7C86732aB
+
+Deploying 'ERC721RaribleBeacon'
+
+---
+
+> transaction hash: 0x61cae578d7e76bed661ffffe7a32387d3b0e72815a85efbb13914eea601332a0
+> Blocks: 2 Seconds: 4
+> contract address: 0xddeDb77E1ce078D7daf285a61C2a998a6Ed1548c
+> block number: 41697828
+> block timestamp: 1681879682
+> account: 0x4FD791220e007415f016d931735cA655DA9759eF
+> balance: 471.955345954304886778
+> gas used: 356292 (0x56fc4)
+> gas price: 249.99482571 gwei
+> value sent: 0 ETH
+> total cost: 0.08907115644186732 ETH
+
+Deploying 'ERC1155RaribleBeacon'
+
+---
+
+> transaction hash: 0x0bf991c0a7a93cf76363a3b043ef0c5c4dc00d9da819e2be2cd60439aa2ae533
+> Blocks: 42 Seconds: 88
+> contract address: 0x73c978AD8861B712F5984d4a55B276D20be7C62A
+> block number: 41697872
+> block timestamp: 1681879776
+> account: 0x4FD791220e007415f016d931735cA655DA9759eF
+> balance: 471.869181127731675418
+> gas used: 356304 (0x56fd0)
+> gas price: 241.82952359 gwei
+> value sent: 0 ETH
+> total cost: 0.08616482657321136 ETH
+
+> Saving migration to chain.
+> Saving artifacts
+
+---
+
+> Total cost: 0.652682373099592807 ETH
+
+# 7_initial_ExchangeV2.js
+
+Deploying 'ExchangeV2'
+
+---
+
+> transaction hash: 0x9cf6ca75a8344ecd7e8f189a1a10172a798e4df4772508cbfe3c8a3c0e27ddbc
+> Blocks: 5 Seconds: 9
+> contract address: 0xcd98ACEd77D109250720f01d885CAb8f1C42075B
+> block number: 41697885
+> block timestamp: 1681879802
+> account: 0x4FD791220e007415f016d931735cA655DA9759eF
+> balance: 470.774009619100063323
+> gas used: 3927123 (0x3bec53)
+> gas price: 277.0415055 gwei
+> value sent: 0 ETH
+> total cost: 1.0879760682036765 ETH
+
+Deploying 'TransparentUpgradeableProxy'
+
+---
+
+> transaction hash: 0x2c77ddb214aaf96045b635c48247c138f459193a84450cbaa4760aa9a621c6b4
+> Blocks: 4 Seconds: 8
+> contract address: 0x4C6536e6055A33DE5BCBB22bc6AB85F81EC65596
+> block number: 41697893
+> block timestamp: 1681879820
+> account: 0x4FD791220e007415f016d931735cA655DA9759eF
+> balance: 470.563528216843951339
+> gas used: 803839 (0xc43ff)
+> gas price: 261.845223056 gwei
+> value sent: 0 ETH
+> total cost: 0.210481402256111984 ETH
+
+deployed exchangeV2 at 0x4C6536e6055A33DE5BCBB22bc6AB85F81EC65596
+
+> Saving migration to chain.
+> Saving artifacts
+
+---
+
+> Total cost: 1.298457470459788484 ETH
+
+# 8_add_operator_proxies.js
+
+> Saving migration to chain.
+
+---
+
+> Total cost: 0 ETH
+
+# 9_deploy_legacy.js
+
+{
+communityWallet: '0x4FD791220e007415f016d931735cA655DA9759eF',
+deploy_CryptoPunks: false,
+address_CryptoPunks: '0x0000000000000000000000000000000000000000'
+}
+
+> Saving migration to chain.
+
+---
+
+> Total cost: 0 ETH
+
+# 10_update_tokens.js
+
+old impl 721 = 0x8Bec9873AdE4d646590fbaB1863d46F4170Dd47e
+new impl 721 = 0x8Bec9873AdE4d646590fbaB1863d46F4170Dd47e
+old impl 1155 = 0x1Eeca25E1a119F77e19B06bC2e76fEDDF165De2f
+new impl 1155 = 0x1Eeca25E1a119F77e19B06bC2e76fEDDF165De2f
+
+> Saving migration to chain.
+
+---
+
+> Total cost: 0 ETH
+
+# 11_update_exchangev2.js
+
+> Saving migration to chain.
+
+---
+
+> Total cost: 0 ETH
+
+# 12_deploy_ERC721Minimal_tokens_factory.js
+
+Deploying 'TransparentUpgradeableProxy'
+
+---
+
+> transaction hash: 0xb385c15047a2a9a4e3fd15f8d980b497269ab58626fb76613dd337aec3c37968
+> Blocks: 6 Seconds: 24
+> contract address: 0x9C3d5C33EE41cc05d784445acbdC1406Af62E347
+> block number: 41697980
+> block timestamp: 1681880030
+> account: 0x4FD791220e007415f016d931735cA655DA9759eF
+> balance: 470.135654456649738867
+> gas used: 930297 (0xe31f9)
+> gas price: 282.122574429 gwei
+> value sent: 0 ETH
+> total cost: 0.262457784623575413 ETH
+
+deployed erc721 minimal at 0x9C3d5C33EE41cc05d784445acbdC1406Af62E347
+
+Deploying 'ERC721RaribleMinimalBeacon'
+
+---
+
+> transaction hash: 0xd83192fe1707ea7152414bc4b01748dbc7c7d4288b403e2a279e6e8da80e1ba5
+> Blocks: 14 Seconds: 32
+> contract address: 0x8A0b2344b86854500dC2b96629fFe0f2908fEd1A
+> block number: 41697995
+> block timestamp: 1681880068
+> account: 0x4FD791220e007415f016d931735cA655DA9759eF
+> balance: 470.031784194617449491
+> gas used: 356304 (0x56fd0)
+> gas price: 291.521459294 gwei
+> value sent: 0 ETH
+> total cost: 0.103870262032289376 ETH
+
+Deploying 'ERC721RaribleFactoryC2'
+
+---
+
+> transaction hash: 0x0d0a15dfa4e8e6bc7988b07c946de75bdfca50c924e9e289fa39df83b17dda63
+> Blocks: 3 Seconds: 8
+> contract address: 0xC663bc5c70815338eE8c4756c69A435B0FFbe5A3
+> block number: 41698000
+> block timestamp: 1681880080
+> account: 0x4FD791220e007415f016d931735cA655DA9759eF
+> balance: 469.656840715469669886
+> gas used: 1321635 (0x142aa3)
+> gas price: 283.696693223 gwei
+> value sent: 0 ETH
+> total cost: 0.374943479147779605 ETH
+
+deployed factory721 minimal at 0xC663bc5c70815338eE8c4756c69A435B0FFbe5A3
+
+> Saving migration to chain.
+> Saving artifacts
+
+---
+
+> Total cost: 0.741271525803644394 ETH
+
+# 13_update_ERC721.js
+
+old impl 721 = 0x8Bec9873AdE4d646590fbaB1863d46F4170Dd47e
+new impl 721 = 0x8Bec9873AdE4d646590fbaB1863d46F4170Dd47e
+
+> Saving migration to chain.
+
+---
+
+> Total cost: 0 ETH
+
+# 14_initial_CryptoPunks.js
+
+> Saving migration to chain.
+
+---
+
+> Total cost: 0 ETH
+
+# 15_upgrade_royalties_registry.js
+
+> Saving migration to chain.
+
+---
+
+> Total cost: 0 ETH
+
+# 16_update_ERC1155_deploy_factory.js
+
+old impl 1155 = 0x1Eeca25E1a119F77e19B06bC2e76fEDDF165De2f
+new impl 1155 = 0x1Eeca25E1a119F77e19B06bC2e76fEDDF165De2f
+
+Deploying 'ERC1155RaribleFactoryC2'
+
+---
+
+> transaction hash: 0x22a0e3602a3515646dafd2b71095717425cc2cb94693e12444c26877c771b575
+> Blocks: 9 Seconds: 16
+> contract address: 0x4c516Fc569b9D2d039D44B09851810F683B0F185
+> block number: 41698159
+> block timestamp: 1681880518
+> account: 0x4FD791220e007415f016d931735cA655DA9759eF
+> balance: 469.191632382107802734
+> gas used: 1321647 (0x142aaf)
+> gas price: 292.895148498 gwei
+> value sent: 0 ETH
+> total cost: 0.387103994326936206 ETH
+
+deployed factory1155 at 0x4c516Fc569b9D2d039D44B09851810F683B0F185
+
+> Saving migration to chain.
+> Saving artifacts
+
+---
+
+> Total cost: 0.387103994326936206 ETH
+
+# 17_collection_matcher.js
+
+Deploying 'AssetMatcherCollection'
+
+---
+
+> transaction hash: 0x3bd83aa6e9c43c752fe97e9cd01ed241963344b33ffeb7da6bb7f426e325c832
+> Blocks: 5 Seconds: 8
+> contract address: 0xd3b19782dC4db5DDd7990De4f84625EB8c6bdAdC
+> block number: 41698174
+> block timestamp: 1681880550
+> account: 0x4FD791220e007415f016d931735cA655DA9759eF
+> balance: 469.108745065214430465
+> gas used: 275151 (0x432cf)
+> gas price: 273.211018159 gwei
+> value sent: 0 ETH
+> total cost: 0.075174284857467009 ETH
+
+asset matcher for collections deployed at 0xd3b19782dC4db5DDd7990De4f84625EB8c6bdAdC
+
+> Saving migration to chain.
+> Saving artifacts
+
+---
+
+> Total cost: 0.075174284857467009 ETH
+
+# Summary
+
+> Total deployments: 17
+> Final cost: 4.119607620739176549 ETH
+
+➜ deploy git:(feature/increase-fees-precision-2) ✗
