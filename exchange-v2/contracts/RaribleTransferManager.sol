@@ -14,10 +14,12 @@ import "./LibFeeSide.sol";
 import "./ITransferManager.sol";
 import "./TransferExecutor.sol";
 import "./lib/BpLibrary.sol";
+import "./lib/PerTrillionLibrary.sol";
 
 abstract contract RaribleTransferManager is OwnableUpgradeable, ITransferManager {
     using BpLibrary for uint;
     using SafeMathUpgradeable for uint;
+    using PerTrillionLibrary for uint;
 
     uint public protocolFee;
     IRoyaltiesProvider public royaltiesRegistry;
@@ -95,8 +97,8 @@ abstract contract RaribleTransferManager is OwnableUpgradeable, ITransferManager
         totalAmount = calculateTotalAmount(amount, protocolFee, dataCalculate.originFees);
         uint rest = transferProtocolFee(totalAmount, amount, from, matchCalculate, transferDirection);
         rest = transferRoyalties(matchCalculate, matchNft, rest, amount, from, transferDirection);
-        (rest,) = transferFees(matchCalculate, rest, amount, dataCalculate.originFees, from, transferDirection, ORIGIN);
-        (rest,) = transferFees(matchCalculate, rest, amount, dataNft.originFees, from, transferDirection, ORIGIN);
+        rest = transferOriginFees(matchCalculate, rest, amount, dataCalculate.originFees, from, transferDirection, ORIGIN);
+        rest = transferOriginFees(matchCalculate, rest, amount, dataNft.originFees, from, transferDirection, ORIGIN);
         transferPayouts(matchCalculate, rest, from, dataNft.payouts, transferDirection);
     }
 
@@ -204,7 +206,7 @@ abstract contract RaribleTransferManager is OwnableUpgradeable, ITransferManager
     ) internal pure returns (uint total){
         total = amount.add(amount.bp(feeOnTopBp));
         for (uint256 i = 0; i < orderOriginFees.length; i++) {
-            total = total.add(amount.bp(orderOriginFees[i].value));
+            total = total.add(amount.perTrillion(orderOriginFees[i].value));
         }
     }
 
@@ -219,6 +221,25 @@ abstract contract RaribleTransferManager is OwnableUpgradeable, ITransferManager
         } else {
             newValue = 0;
             realFee = value;
+        }
+    }
+
+    function transferOriginFees(
+        LibAsset.AssetType memory matchCalculate,
+        uint rest,
+        uint amount,
+        LibPart.Part[] memory fees,
+        address from,
+        bytes4 transferDirection,
+        bytes4 transferType
+    ) internal returns (uint restValue) {
+        restValue = rest;
+        for (uint256 i = 0; i < fees.length; i++) {
+            (uint newRestValue, uint feeValue) = subFee(restValue, amount.perTrillion(fees[i].value));
+            restValue = newRestValue;
+            if (feeValue > 0) {
+                transfer(LibAsset.Asset(matchCalculate, feeValue), from,  fees[i].account, transferDirection, transferType);
+            }
         }
     }
 

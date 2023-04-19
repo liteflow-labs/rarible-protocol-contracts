@@ -1,40 +1,45 @@
 {
   "manifestVersion": "3.2",
   "admin": {
-    "address": "0x7983a0D466b62Eec1F55F7051168B2d1543FaFE2",
-    "txHash": "0x9701bde0cfc40fc2e0c7953d87d9d255af5d98cef80eb5e4b9d464365b5058ad"
+    "address": "0xB1f1141122c45ec64B63d086514Eeb1Fd18eE248",
+    "txHash": "0xbfb4bc9ab3692aad15b98563a5729b5768b94987b6c2e85d9117f97d8c32e857"
   },
   "proxies": [
     {
-      "address": "0xE3c11fB8436Fa418900B06547fC27d1c9A71f877",
-      "txHash": "0xb1178df31e0b4b2fb531034cb25d0c8b2799f5d2b6a6adb07c75a382c9944957",
+      "address": "0x7Ab155f4C379F42A1964A9AF9BC9909ce182a7C6",
+      "txHash": "0xcdddb58b1398a17ca9d524ddd6c79f5d937388edba12f2078ea1b202ef4da9a5",
       "kind": "transparent"
     },
     {
-      "address": "0x31D56e268357937407EA179ce72e93B2d9c5612E",
-      "txHash": "0x1ae095f02ba251a30ad83afaec7e914f64459634e683d8ed3901f7a10b0f3b19",
+      "address": "0xf965E2781FDA7C5dCdc1Cbe30a602Fbc9D9e4cc6",
+      "txHash": "0x20a774f6260aa38de3738bc4d1a5225106c1c306d53b4e883b232f00414c62a8",
       "kind": "transparent"
     },
     {
-      "address": "0x9ea8329a72B1388A7cDa3fe7DDD99f97a6794c85",
-      "txHash": "0x97363712736f5984eba5f94c3b083ae6c160b6a61e66c83a64e3824e2a6a7364",
+      "address": "0x2cCDFC84E3Aaae63d5bc1584381596F452eA5872",
+      "txHash": "0xfed38bd045e848ba9052a77e5913c7b762bd53da223aad26d33d83ede4a876b7",
       "kind": "transparent"
     },
     {
-      "address": "0x332A1cAE13Ffd298d4a477e8d910d67a854fEB9D",
-      "txHash": "0xdc8539223ae7ca73e0ee46dd554f2d57c4c88175f512ec011843632bf900eddd",
+      "address": "0x8b620105aA73B9951889f46ca280Af7c781c1b29",
+      "txHash": "0xc4eed8fed2c68f21e92f918ff54ee8da1e2e6397c9c64ee72db7dc925d737ceb",
       "kind": "transparent"
     },
     {
-      "address": "0x98005cc6892e712C899f3A496870269DD9B718f1",
-      "txHash": "0xa89605e852840260f11b3b9a469da2106ff49254715d68a1ace04813ad2e26eb",
+      "address": "0xAd011487E5ac744b788d6bB27A6d01c6d42db4A6",
+      "txHash": "0xaf663fc3150d0e7dbc08987bb5f4b48b0ead6a4cce1bca719a43a33543fa5ad7",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xeFBdD3BbB16Aa79F59802aD8f45D6d5819b558f3",
+      "txHash": "0x3b05a907f678dd78b63d3d6f401e90237da070e0d6d79a0d9f89d14c861e74c3",
       "kind": "transparent"
     }
   ],
   "impls": {
     "740f4cf0b0860289e2bcafb1ee88e5020261f296747cabf8cbb0ab8297409b33": {
-      "address": "0xc4A4A255450Dd5E3EC951805701125984b71b007",
-      "txHash": "0xa2ac6ffc08f7b91764b15b6e7d00a99c4a7a3c75df0ad4b521301d20c95c60ae",
+      "address": "0x9B9E24109CcA374A21F98Fbe00b84418b00770D2",
+      "txHash": "0xd0426a08f3803b7014769c85e580be5a12b9b5f4d3cb045b2f2fc275155b1469",
       "layout": {
         "storage": [
           {
@@ -70,13 +75,13 @@
           {
             "contract": "RoyaltiesRegistry",
             "label": "royaltiesByTokenAndTokenId",
-            "type": "t_mapping(t_bytes32,t_struct(RoyaltiesSet)7649_storage)",
+            "type": "t_mapping(t_bytes32,t_struct(RoyaltiesSet)7756_storage)",
             "src": "../@rarible/royalties-registry/contracts/RoyaltiesRegistry.sol:29"
           },
           {
             "contract": "RoyaltiesRegistry",
             "label": "royaltiesByToken",
-            "type": "t_mapping(t_address,t_struct(RoyaltiesSet)7649_storage)",
+            "type": "t_mapping(t_address,t_struct(RoyaltiesSet)7756_storage)",
             "src": "../@rarible/royalties-registry/contracts/RoyaltiesRegistry.sol:31"
           },
           {
@@ -93,13 +98,13 @@
           }
         ],
         "types": {
-          "t_mapping(t_bytes32,t_struct(RoyaltiesSet)7649_storage)": {
+          "t_mapping(t_bytes32,t_struct(RoyaltiesSet)7756_storage)": {
             "label": "mapping(bytes32 => struct RoyaltiesRegistry.RoyaltiesSet)"
           },
           "t_bytes32": {
             "label": "bytes32"
           },
-          "t_struct(RoyaltiesSet)7649_storage": {
+          "t_struct(RoyaltiesSet)7756_storage": {
             "label": "struct RoyaltiesRegistry.RoyaltiesSet",
             "members": [
               {
@@ -108,17 +113,17 @@
               },
               {
                 "label": "royalties",
-                "type": "t_array(t_struct(Part)8909_storage)dyn_storage"
+                "type": "t_array(t_struct(Part)9016_storage)dyn_storage"
               }
             ]
           },
           "t_bool": {
             "label": "bool"
           },
-          "t_array(t_struct(Part)8909_storage)dyn_storage": {
+          "t_array(t_struct(Part)9016_storage)dyn_storage": {
             "label": "struct LibPart.Part[]"
           },
-          "t_struct(Part)8909_storage": {
+          "t_struct(Part)9016_storage": {
             "label": "struct LibPart.Part",
             "members": [
               {
@@ -137,7 +142,7 @@
           "t_uint96": {
             "label": "uint96"
           },
-          "t_mapping(t_address,t_struct(RoyaltiesSet)7649_storage)": {
+          "t_mapping(t_address,t_struct(RoyaltiesSet)7756_storage)": {
             "label": "mapping(address => struct RoyaltiesRegistry.RoyaltiesSet)"
           },
           "t_address": {
@@ -162,8 +167,8 @@
       }
     },
     "fc442ef0b7e3abee17a91f5781e2e98c7c460b102842e4e05e3e306bb9ca7eea": {
-      "address": "0xF8b1a2e298358C0A9a8d797Fac41dBC5026Cd5d2",
-      "txHash": "0xf6566b6d651183604fd553655fcc0e59337f5c77a276548246c39b74cf3aba6c",
+      "address": "0xD46cDe4F84f08dc369c945e3482ac907ad6061D2",
+      "txHash": "0x85f1c7c48525657fd15f328335ac792b22feb47bb9b0424d8c9aef11eae756a4",
       "layout": {
         "storage": [
           {
@@ -319,13 +324,13 @@
           {
             "contract": "AbstractRoyalties",
             "label": "royalties",
-            "type": "t_mapping(t_uint256,t_array(t_struct(Part)8909_storage)dyn_storage)",
+            "type": "t_mapping(t_uint256,t_array(t_struct(Part)9016_storage)dyn_storage)",
             "src": "../@rarible/royalties/contracts/impl/AbstractRoyalties.sol:8"
           },
           {
             "contract": "ERC721Lazy",
             "label": "creators",
-            "type": "t_mapping(t_uint256,t_array(t_struct(Part)8909_storage)dyn_storage)",
+            "type": "t_mapping(t_uint256,t_array(t_struct(Part)9016_storage)dyn_storage)",
             "src": "../@rarible/tokens/contracts/erc-721/ERC721Lazy.sol:23"
           },
           {
@@ -372,13 +377,13 @@
           "t_array(t_uint256)49_storage": {
             "label": "uint256[49]"
           },
-          "t_mapping(t_uint256,t_array(t_struct(Part)8909_storage)dyn_storage)": {
+          "t_mapping(t_uint256,t_array(t_struct(Part)9016_storage)dyn_storage)": {
             "label": "mapping(uint256 => struct LibPart.Part[])"
           },
-          "t_array(t_struct(Part)8909_storage)dyn_storage": {
+          "t_array(t_struct(Part)9016_storage)dyn_storage": {
             "label": "struct LibPart.Part[]"
           },
-          "t_struct(Part)8909_storage": {
+          "t_struct(Part)9016_storage": {
             "label": "struct LibPart.Part",
             "members": [
               {
@@ -503,8 +508,8 @@
       }
     },
     "944b6d43a2537134b1ed6c6a7d166094f7c3eb6618d87adc4565b3d89d4dc8f5": {
-      "address": "0xCF9ce1B0031c64F77BA15C3CBA68a5E848d92566",
-      "txHash": "0x0860c3a19b1407be687ef37ddc6f460e99e96851f99d185ca34745ce49b70483",
+      "address": "0xf35922b57e452cB6014ecAdE152C26dec98e4e56",
+      "txHash": "0xe53fd48aa3df43c970751e6be0f329da52f024a26f59d8e8a0762b652ba746ad",
       "layout": {
         "storage": [
           {
@@ -642,13 +647,13 @@
           {
             "contract": "AbstractRoyalties",
             "label": "royalties",
-            "type": "t_mapping(t_uint256,t_array(t_struct(Part)8909_storage)dyn_storage)",
+            "type": "t_mapping(t_uint256,t_array(t_struct(Part)9016_storage)dyn_storage)",
             "src": "../@rarible/royalties/contracts/impl/AbstractRoyalties.sol:8"
           },
           {
             "contract": "ERC1155Lazy",
             "label": "creators",
-            "type": "t_mapping(t_uint256,t_array(t_struct(Part)8909_storage)dyn_storage)",
+            "type": "t_mapping(t_uint256,t_array(t_struct(Part)9016_storage)dyn_storage)",
             "src": "../@rarible/tokens/contracts/erc-1155/ERC1155Lazy.sol:20"
           },
           {
@@ -728,13 +733,13 @@
           "t_array(t_uint256)50_storage": {
             "label": "uint256[50]"
           },
-          "t_mapping(t_uint256,t_array(t_struct(Part)8909_storage)dyn_storage)": {
+          "t_mapping(t_uint256,t_array(t_struct(Part)9016_storage)dyn_storage)": {
             "label": "mapping(uint256 => struct LibPart.Part[])"
           },
-          "t_array(t_struct(Part)8909_storage)dyn_storage": {
+          "t_array(t_struct(Part)9016_storage)dyn_storage": {
             "label": "struct LibPart.Part[]"
           },
-          "t_struct(Part)8909_storage": {
+          "t_struct(Part)9016_storage": {
             "label": "struct LibPart.Part",
             "members": [
               {
@@ -789,9 +794,9 @@
         }
       }
     },
-    "0f38a87a9cd6ed147b12d9b695a54c0cba915064ca6d21fe8a00d28a699540c8": {
-      "address": "0xf4DDD8Cc14caf1895e8980c5dBB3114A450FB3E1",
-      "txHash": "0xdb022184b117205748bf41e9b9d16d4a9faec8dd98234db4080209590963bfba",
+    "94f830eb613b2ed657c06690f0ae1e02cfb75f4f25af19ac99a56b04b749dbc5": {
+      "address": "0x3ec37AC9808B71A4EEEf1664a5E9D162d60038f5",
+      "txHash": "0xfe6456f45388fde79ce60c8ae4f4e34bfdc8ff285356442ca0f795afc0aba758",
       "layout": {
         "storage": [
           {
@@ -888,38 +893,38 @@
             "contract": "RaribleTransferManager",
             "label": "protocolFee",
             "type": "t_uint256",
-            "src": "../@rarible/exchange-v2/contracts/RaribleTransferManager.sol:22"
+            "src": "../@rarible/exchange-v2/contracts/RaribleTransferManager.sol:24"
           },
           {
             "contract": "RaribleTransferManager",
             "label": "royaltiesRegistry",
-            "type": "t_contract(IRoyaltiesProvider)8897",
-            "src": "../@rarible/exchange-v2/contracts/RaribleTransferManager.sol:23"
+            "type": "t_contract(IRoyaltiesProvider)9004",
+            "src": "../@rarible/exchange-v2/contracts/RaribleTransferManager.sol:25"
           },
           {
             "contract": "RaribleTransferManager",
             "label": "defaultFeeReceiver",
             "type": "t_address",
-            "src": "../@rarible/exchange-v2/contracts/RaribleTransferManager.sol:25"
+            "src": "../@rarible/exchange-v2/contracts/RaribleTransferManager.sol:27"
           },
           {
             "contract": "RaribleTransferManager",
             "label": "feeReceivers",
             "type": "t_mapping(t_address,t_address)",
-            "src": "../@rarible/exchange-v2/contracts/RaribleTransferManager.sol:26"
+            "src": "../@rarible/exchange-v2/contracts/RaribleTransferManager.sol:28"
           },
           {
             "contract": "RaribleTransferManager",
             "label": "__gap",
             "type": "t_array(t_uint256)46_storage",
-            "src": "../@rarible/exchange-v2/contracts/RaribleTransferManager.sol:226"
+            "src": "../@rarible/exchange-v2/contracts/RaribleTransferManager.sol:247"
           }
         ],
         "types": {
           "t_uint256": {
             "label": "uint256"
           },
-          "t_contract(IRoyaltiesProvider)8897": {
+          "t_contract(IRoyaltiesProvider)9004": {
             "label": "contract IRoyaltiesProvider"
           },
           "t_address": {
@@ -956,8 +961,8 @@
       }
     },
     "a38af53fe7e8afe0080ffa318daf07fe0ce482cf5338d3a9d4cca996233b486a": {
-      "address": "0xa5f97D30165371b91C5ab0974767C56E5aE96eF9",
-      "txHash": "0xf4d2bfeb12bdf9a83685266a5e1a2e6302ef3ea5ede933183639b607af8ba6cc",
+      "address": "0xB38e59c7971De907cb431532Ad2291C010DF35D8",
+      "txHash": "0x771eb75dee26db754b624b99b57df40fca6ab91fd1b23e0f97501ca1883f23a1",
       "layout": {
         "storage": [
           {
@@ -1101,7 +1106,7 @@
           {
             "contract": "AbstractRoyalties",
             "label": "royalties",
-            "type": "t_mapping(t_uint256,t_array(t_struct(Part)8909_storage)dyn_storage)",
+            "type": "t_mapping(t_uint256,t_array(t_struct(Part)9016_storage)dyn_storage)",
             "src": "../@rarible/royalties/contracts/impl/AbstractRoyalties.sol:8"
           },
           {
@@ -1125,7 +1130,7 @@
           {
             "contract": "ERC721LazyMinimal",
             "label": "creators",
-            "type": "t_mapping(t_uint256,t_array(t_struct(Part)8909_storage)dyn_storage)",
+            "type": "t_mapping(t_uint256,t_array(t_struct(Part)9016_storage)dyn_storage)",
             "src": "../@rarible/tokens/contracts/erc-721-minimal/ERC721LazyMinimal.sol:23"
           },
           {
@@ -1181,13 +1186,13 @@
           "t_string_storage": {
             "label": "string"
           },
-          "t_mapping(t_uint256,t_array(t_struct(Part)8909_storage)dyn_storage)": {
+          "t_mapping(t_uint256,t_array(t_struct(Part)9016_storage)dyn_storage)": {
             "label": "mapping(uint256 => struct LibPart.Part[])"
           },
-          "t_array(t_struct(Part)8909_storage)dyn_storage": {
+          "t_array(t_struct(Part)9016_storage)dyn_storage": {
             "label": "struct LibPart.Part[]"
           },
-          "t_struct(Part)8909_storage": {
+          "t_struct(Part)9016_storage": {
             "label": "struct LibPart.Part",
             "members": [
               {

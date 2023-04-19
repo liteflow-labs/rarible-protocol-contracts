@@ -76,8 +76,8 @@ module.exports = {
     // binance: createNetwork("binance"),
     // goerli: createNetwork('goerli'),
     // mumbai: createNetwork('mumbai'),
-    // polygon: createNetwork('polygon'),
-    ultron_testnet: createNetwork('ultron_testnet'),
+    polygon: createNetwork('polygon'),
+    // ultron_testnet: createNetwork('ultron_testnet'),
   },
 
   compilers: {

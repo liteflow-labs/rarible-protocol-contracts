@@ -29,6 +29,36 @@
       "address": "0x5d35FB950f21A0F8C3519a671251c4AEfcD406aB",
       "txHash": "0xeaffebef9033e0d37da4dc82908ea30dbad6c63de21a23fd106bdd793bf6d173",
       "kind": "transparent"
+    },
+    {
+      "address": "0x25f89dD6c78e34ecdDF1F6432778Ce8B7abCaAab",
+      "txHash": "0x6e457e40e3f8cf28784d1dbca0c516b1f3e1c6fab9bd6b473452f1980b8da4ad",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xA8C745dAF795956b85ED0DaCBEEDB747Fe10dF63",
+      "txHash": "0xb1ef00be61c7b066d2e58da86f1c1b92dcf6083613a3f042e8e47a5de81273d1",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x2eFAa8e79f47d9c1348af88cB8FeA3A08870dB72",
+      "txHash": "0x1d4a985e70da81bb2d43ed585475816bad469b5429c0eb1ca2f5b3b86a7eb953",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xDdaD5c397B999EdAa37ED42af9d1829F800898Bb",
+      "txHash": "0x4b042999b092d3c251e976b9e66ed71c1c992828adadb6c8a0ff72f756c470c2",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xBa2A7315cAE5cD81F942aF50c1D09b98df1d3C65",
+      "txHash": "0xdddf7ab487e1bc1144613556c17ef9c1c083accfff28c3b59340b891afd6e635",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x05E6D034e1Fc6cb3C6E0A36B6f19bcE819786234",
+      "txHash": "0x835a1b288fc51858d54d2e83daef2481d7d4e41fe8c79fe0cb9385d01ea70745",
+      "kind": "transparent"
     }
   ],
   "impls": {
@@ -70,13 +100,13 @@
           {
             "contract": "RoyaltiesRegistry",
             "label": "royaltiesByTokenAndTokenId",
-            "type": "t_mapping(t_bytes32,t_struct(RoyaltiesSet)7649_storage)",
+            "type": "t_mapping(t_bytes32,t_struct(RoyaltiesSet)7756_storage)",
             "src": "../@rarible/royalties-registry/contracts/RoyaltiesRegistry.sol:29"
           },
           {
             "contract": "RoyaltiesRegistry",
             "label": "royaltiesByToken",
-            "type": "t_mapping(t_address,t_struct(RoyaltiesSet)7649_storage)",
+            "type": "t_mapping(t_address,t_struct(RoyaltiesSet)7756_storage)",
             "src": "../@rarible/royalties-registry/contracts/RoyaltiesRegistry.sol:31"
           },
           {
@@ -93,13 +123,13 @@
           }
         ],
         "types": {
-          "t_mapping(t_bytes32,t_struct(RoyaltiesSet)7649_storage)": {
+          "t_mapping(t_bytes32,t_struct(RoyaltiesSet)7756_storage)": {
             "label": "mapping(bytes32 => struct RoyaltiesRegistry.RoyaltiesSet)"
           },
           "t_bytes32": {
             "label": "bytes32"
           },
-          "t_struct(RoyaltiesSet)7649_storage": {
+          "t_struct(RoyaltiesSet)7756_storage": {
             "label": "struct RoyaltiesRegistry.RoyaltiesSet",
             "members": [
               {
@@ -108,17 +138,17 @@
               },
               {
                 "label": "royalties",
-                "type": "t_array(t_struct(Part)8909_storage)dyn_storage"
+                "type": "t_array(t_struct(Part)9016_storage)dyn_storage"
               }
             ]
           },
           "t_bool": {
             "label": "bool"
           },
-          "t_array(t_struct(Part)8909_storage)dyn_storage": {
+          "t_array(t_struct(Part)9016_storage)dyn_storage": {
             "label": "struct LibPart.Part[]"
           },
-          "t_struct(Part)8909_storage": {
+          "t_struct(Part)9016_storage": {
             "label": "struct LibPart.Part",
             "members": [
               {
@@ -137,7 +167,7 @@
           "t_uint96": {
             "label": "uint96"
           },
-          "t_mapping(t_address,t_struct(RoyaltiesSet)7649_storage)": {
+          "t_mapping(t_address,t_struct(RoyaltiesSet)7756_storage)": {
             "label": "mapping(address => struct RoyaltiesRegistry.RoyaltiesSet)"
           },
           "t_address": {
@@ -319,13 +349,13 @@
           {
             "contract": "AbstractRoyalties",
             "label": "royalties",
-            "type": "t_mapping(t_uint256,t_array(t_struct(Part)8909_storage)dyn_storage)",
+            "type": "t_mapping(t_uint256,t_array(t_struct(Part)9016_storage)dyn_storage)",
             "src": "../@rarible/royalties/contracts/impl/AbstractRoyalties.sol:8"
           },
           {
             "contract": "ERC721Lazy",
             "label": "creators",
-            "type": "t_mapping(t_uint256,t_array(t_struct(Part)8909_storage)dyn_storage)",
+            "type": "t_mapping(t_uint256,t_array(t_struct(Part)9016_storage)dyn_storage)",
             "src": "../@rarible/tokens/contracts/erc-721/ERC721Lazy.sol:23"
           },
           {
@@ -372,13 +402,13 @@
           "t_array(t_uint256)49_storage": {
             "label": "uint256[49]"
           },
-          "t_mapping(t_uint256,t_array(t_struct(Part)8909_storage)dyn_storage)": {
+          "t_mapping(t_uint256,t_array(t_struct(Part)9016_storage)dyn_storage)": {
             "label": "mapping(uint256 => struct LibPart.Part[])"
           },
-          "t_array(t_struct(Part)8909_storage)dyn_storage": {
+          "t_array(t_struct(Part)9016_storage)dyn_storage": {
             "label": "struct LibPart.Part[]"
           },
-          "t_struct(Part)8909_storage": {
+          "t_struct(Part)9016_storage": {
             "label": "struct LibPart.Part",
             "members": [
               {
@@ -642,13 +672,13 @@
           {
             "contract": "AbstractRoyalties",
             "label": "royalties",
-            "type": "t_mapping(t_uint256,t_array(t_struct(Part)8909_storage)dyn_storage)",
+            "type": "t_mapping(t_uint256,t_array(t_struct(Part)9016_storage)dyn_storage)",
             "src": "../@rarible/royalties/contracts/impl/AbstractRoyalties.sol:8"
           },
           {
             "contract": "ERC1155Lazy",
             "label": "creators",
-            "type": "t_mapping(t_uint256,t_array(t_struct(Part)8909_storage)dyn_storage)",
+            "type": "t_mapping(t_uint256,t_array(t_struct(Part)9016_storage)dyn_storage)",
             "src": "../@rarible/tokens/contracts/erc-1155/ERC1155Lazy.sol:20"
           },
           {
@@ -728,13 +758,13 @@
           "t_array(t_uint256)50_storage": {
             "label": "uint256[50]"
           },
-          "t_mapping(t_uint256,t_array(t_struct(Part)8909_storage)dyn_storage)": {
+          "t_mapping(t_uint256,t_array(t_struct(Part)9016_storage)dyn_storage)": {
             "label": "mapping(uint256 => struct LibPart.Part[])"
           },
-          "t_array(t_struct(Part)8909_storage)dyn_storage": {
+          "t_array(t_struct(Part)9016_storage)dyn_storage": {
             "label": "struct LibPart.Part[]"
           },
-          "t_struct(Part)8909_storage": {
+          "t_struct(Part)9016_storage": {
             "label": "struct LibPart.Part",
             "members": [
               {
@@ -1238,6 +1268,172 @@
           },
           "t_bytes4": {
             "label": "bytes4"
+          }
+        }
+      }
+    },
+    "94f830eb613b2ed657c06690f0ae1e02cfb75f4f25af19ac99a56b04b749dbc5": {
+      "address": "0xaF0DD2cF081dcF012876e45F314a68f3dEfCe0Da",
+      "txHash": "0xe6691a121a12b09bfe6eb7c587415b370c8346d1f50127dc9da08b713e83c310",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "_initialized",
+            "type": "t_bool",
+            "src": "../@openzeppelin/contracts-upgradeable/proxy/Initializable.sol:25"
+          },
+          {
+            "contract": "Initializable",
+            "label": "_initializing",
+            "type": "t_bool",
+            "src": "../@openzeppelin/contracts-upgradeable/proxy/Initializable.sol:30"
+          },
+          {
+            "contract": "ContextUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "../@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:31"
+          },
+          {
+            "contract": "OwnableUpgradeable",
+            "label": "_owner",
+            "type": "t_address",
+            "src": "../@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:20"
+          },
+          {
+            "contract": "OwnableUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)49_storage",
+            "src": "../@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:74"
+          },
+          {
+            "contract": "AssetMatcher",
+            "label": "matchers",
+            "type": "t_mapping(t_bytes4,t_address)",
+            "src": "../@rarible/exchange-v2/contracts/AssetMatcher.sol:13"
+          },
+          {
+            "contract": "AssetMatcher",
+            "label": "__gap",
+            "type": "t_array(t_uint256)49_storage",
+            "src": "../@rarible/exchange-v2/contracts/AssetMatcher.sol:77"
+          },
+          {
+            "contract": "TransferExecutor",
+            "label": "proxies",
+            "type": "t_mapping(t_bytes4,t_address)",
+            "src": "../@rarible/exchange-v2/contracts/TransferExecutor.sol:17"
+          },
+          {
+            "contract": "TransferExecutor",
+            "label": "__gap",
+            "type": "t_array(t_uint256)49_storage",
+            "src": "../@rarible/exchange-v2/contracts/TransferExecutor.sol:57"
+          },
+          {
+            "contract": "EIP712Upgradeable",
+            "label": "_HASHED_NAME",
+            "type": "t_bytes32",
+            "src": "../@openzeppelin/contracts-upgradeable/drafts/EIP712Upgradeable.sol:27"
+          },
+          {
+            "contract": "EIP712Upgradeable",
+            "label": "_HASHED_VERSION",
+            "type": "t_bytes32",
+            "src": "../@openzeppelin/contracts-upgradeable/drafts/EIP712Upgradeable.sol:28"
+          },
+          {
+            "contract": "EIP712Upgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "../@openzeppelin/contracts-upgradeable/drafts/EIP712Upgradeable.sol:120"
+          },
+          {
+            "contract": "OrderValidator",
+            "label": "__gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "../@rarible/exchange-v2/contracts/OrderValidator.sol:50"
+          },
+          {
+            "contract": "ExchangeV2Core",
+            "label": "fills",
+            "type": "t_mapping(t_bytes32,t_uint256)",
+            "src": "../@rarible/exchange-v2/contracts/ExchangeV2Core.sol:21"
+          },
+          {
+            "contract": "ExchangeV2Core",
+            "label": "__gap",
+            "type": "t_array(t_uint256)49_storage",
+            "src": "../@rarible/exchange-v2/contracts/ExchangeV2Core.sol:130"
+          },
+          {
+            "contract": "RaribleTransferManager",
+            "label": "protocolFee",
+            "type": "t_uint256",
+            "src": "../@rarible/exchange-v2/contracts/RaribleTransferManager.sol:24"
+          },
+          {
+            "contract": "RaribleTransferManager",
+            "label": "royaltiesRegistry",
+            "type": "t_contract(IRoyaltiesProvider)9004",
+            "src": "../@rarible/exchange-v2/contracts/RaribleTransferManager.sol:25"
+          },
+          {
+            "contract": "RaribleTransferManager",
+            "label": "defaultFeeReceiver",
+            "type": "t_address",
+            "src": "../@rarible/exchange-v2/contracts/RaribleTransferManager.sol:27"
+          },
+          {
+            "contract": "RaribleTransferManager",
+            "label": "feeReceivers",
+            "type": "t_mapping(t_address,t_address)",
+            "src": "../@rarible/exchange-v2/contracts/RaribleTransferManager.sol:28"
+          },
+          {
+            "contract": "RaribleTransferManager",
+            "label": "__gap",
+            "type": "t_array(t_uint256)46_storage",
+            "src": "../@rarible/exchange-v2/contracts/RaribleTransferManager.sol:247"
+          }
+        ],
+        "types": {
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_contract(IRoyaltiesProvider)9004": {
+            "label": "contract IRoyaltiesProvider"
+          },
+          "t_address": {
+            "label": "address"
+          },
+          "t_mapping(t_address,t_address)": {
+            "label": "mapping(address => address)"
+          },
+          "t_array(t_uint256)46_storage": {
+            "label": "uint256[46]"
+          },
+          "t_mapping(t_bytes32,t_uint256)": {
+            "label": "mapping(bytes32 => uint256)"
+          },
+          "t_bytes32": {
+            "label": "bytes32"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]"
+          },
+          "t_mapping(t_bytes4,t_address)": {
+            "label": "mapping(bytes4 => address)"
+          },
+          "t_bytes4": {
+            "label": "bytes4"
+          },
+          "t_bool": {
+            "label": "bool"
           }
         }
       }
