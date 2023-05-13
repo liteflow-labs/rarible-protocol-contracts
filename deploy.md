@@ -10,7 +10,7 @@ Make sure you have the corresponding network file in `~/.ethereum/NETWORK_NAME.j
   "key": "", // mnemonic. the path must be m/44'/60'/0'/0/0
   "url": "", // provider url
   "network_id": 56, // binance
-  "gasPrice": 6 // in wei. make sure to put a good value even on testnet, not too low and not too high!
+  // "gasPrice": 6 // optional: in wei. make sure to put a good value even on testnet, not too low and not too high!
 }
 ```
 

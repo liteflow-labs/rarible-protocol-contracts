@@ -77,7 +77,8 @@ module.exports = {
     // goerli: createNetwork('goerli'),
     // mumbai: createNetwork('mumbai'),
     // polygon: createNetwork('polygon'),
-    ultron_testnet: createNetwork('ultron_testnet'),
+    // ultron_testnet: createNetwork('ultron_testnet'),
+    lightlink_pegasus: createNetwork('lightlink_pegasus'),
   },
 
   compilers: {
