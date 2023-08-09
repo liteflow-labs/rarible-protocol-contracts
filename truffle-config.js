@@ -35,7 +35,6 @@ function createNetwork(name) {
         }
       },
       from: json.address,
-      // gas: 6000000, // TODO: should use estimate gas...
       // gasPrice: gasPrice,
       network_id: json.network_id,
       skipDryRun: true,
@@ -78,7 +77,8 @@ module.exports = {
     // mumbai: createNetwork('mumbai'),
     // polygon: createNetwork('polygon'),
     // ultron_testnet: createNetwork('ultron_testnet'),
-    lightlink_pegasus: createNetwork('lightlink_pegasus'),
+    // lightlink_pegasus: createNetwork('lightlink_pegasus'),
+    lightlink_phoenix: createNetwork('lightlink_phoenix'),
   },
 
   compilers: {
