@@ -27,11 +27,11 @@ module.exports = async function (deployer, network) {
   const erc721minimal = await getProxyImplementation(ERC721RaribleMinimal, network, ProxyAdmin)
 
   //upgrading 721 beacon
-  await deployer.deploy(ERC721RaribleMinimalBeacon, erc721minimal, { gas: 1000000 });
+  await deployer.deploy(ERC721RaribleMinimalBeacon, erc721minimal);
   const beacon721Minimal = await ERC721RaribleMinimalBeacon.deployed()
 
   //deploying factory
-  const factory721 = await deployer.deploy(ERC721RaribleFactoryC2, beacon721Minimal.address, transferProxy, erc721LazyMintTransferProxy, { gas: 2500000 });
+  const factory721 = await deployer.deploy(ERC721RaribleFactoryC2, beacon721Minimal.address, transferProxy, erc721LazyMintTransferProxy);
   console.log(`deployed factory721 minimal at ${factory721.address}`)
   
 };

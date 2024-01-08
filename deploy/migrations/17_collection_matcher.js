@@ -6,7 +6,7 @@ const { id } = require("./config.js");
 
 module.exports = async function (deployer) {
   //deploy asset matcher for collections
-  await deployer.deploy(AssetMatcherCollection, { gas: 1000000 });
+  await deployer.deploy(AssetMatcherCollection);
   const matcher = await AssetMatcherCollection.deployed();
   console.log("asset matcher for collections deployed at", matcher.address)
 

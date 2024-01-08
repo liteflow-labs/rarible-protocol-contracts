@@ -14,17 +14,17 @@ module.exports = async function (deployer, network) {
   const ExchangeV2 = artifacts.require('ExchangeV2');
 
   if (settings.deploy_CryptoPunks) {
-    await deployer.deploy(CryptoPunksMarket, { gas: 4500000 });
+    await deployer.deploy(CryptoPunksMarket);
     cryptoPunksMarket = await CryptoPunksMarket.deployed();
   } else {
     cryptoPunksMarket = await CryptoPunksMarket.at(settings.address_CryptoPunks);
   }
   console.log("cryptoPunksMarket address: ",  cryptoPunksMarket.address);
 
-  await deployer.deploy(PunkTransferProxy, { gas: 1500000 });
+  await deployer.deploy(PunkTransferProxy);
   const punkTransferProxy = await PunkTransferProxy.deployed();
   console.log("deployed punkTransferProxy: ", punkTransferProxy.address);
-  await punkTransferProxy.__OperatorRole_init({ gas: 200000 });
+  await punkTransferProxy.__OperatorRole_init();
 
   const exchangeV2 = await ExchangeV2.deployed();
 

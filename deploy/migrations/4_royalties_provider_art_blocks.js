@@ -22,13 +22,13 @@ async function setArtBlocksProvider(deployer, network, royaltiesRegistry, settin
     return;
   }
 
-  const providerArtBlocks = await deployer.deploy(RoyaltiesProviderArtBlocks, { gas: 1000000 });
+  const providerArtBlocks = await deployer.deploy(RoyaltiesProviderArtBlocks);
   console.log("deployed providerArtBlocks", providerArtBlocks.address)
-  await providerArtBlocks.transferOwnership(settings.artblocksAddress, { gas: 150000 });
+  await providerArtBlocks.transferOwnership(settings.artblocksAddress);
 
   console.log(`set artblocksAddress ${await providerArtBlocks.owner()}`)
   for (const token of settings.tokens) {
-    await royaltiesRegistry.setProviderByToken(token, providerArtBlocks.address, { gas: 100000 });
+    await royaltiesRegistry.setProviderByToken(token, providerArtBlocks.address);
 
     console.log(`set royalties royaltiesProviderArtBlocks ${await royaltiesRegistry.getProvider(token)} for token ${token}`)
   }
