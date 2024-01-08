@@ -78,7 +78,8 @@ module.exports = {
     // polygon: createNetwork('polygon'),
     // ultron_testnet: createNetwork('ultron_testnet'),
     // lightlink_pegasus: createNetwork('lightlink_pegasus'),
-    lightlink_phoenix: createNetwork('lightlink_phoenix'),
+    // lightlink_phoenix: createNetwork('lightlink_phoenix'),
+    neonevm_devnet: createNetwork('neonevm_devnet'),
   },
 
   compilers: {

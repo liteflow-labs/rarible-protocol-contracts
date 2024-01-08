@@ -123,6 +123,12 @@ const lightlink_phoenix = {
   address_CryptoPunks: '0x0000000000000000000000000000000000000000',
 }
 
+const neonevm_devnet = {
+  communityWallet: '0x29bD48E4cB7562D660506Ff940365a76A8d407E3',
+  deploy_CryptoPunks: false,
+  address_CryptoPunks: '0x0000000000000000000000000000000000000000',
+}
+
 let settings = {
   // default: def,
   // rinkeby: rinkeby,
@@ -145,6 +151,7 @@ let settings = {
   ultron_testnet: ultron_testnet,
   lightlink_pegasus: lightlink_pegasus,
   lightlink_phoenix: lightlink_phoenix,
+  neonevm_devnet: neonevm_devnet,
 }
 
 function getSettings(network) {
