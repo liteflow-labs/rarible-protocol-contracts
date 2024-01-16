@@ -38,8 +38,8 @@ function createNetwork(name) {
       // gasPrice: gasPrice,
       network_id: json.network_id,
       skipDryRun: true,
-      // networkCheckTimeout: 4 * 1000 * 1000 // 500000
-      networkCheckTimeout: 10 * 1000,
+      networkCheckTimeout: 4 * 1000 * 1000,
+      // networkCheckTimeout: 10 * 1000,
     }
   } catch (e) {
     return null
@@ -79,7 +79,8 @@ module.exports = {
     // ultron_testnet: createNetwork('ultron_testnet'),
     // lightlink_pegasus: createNetwork('lightlink_pegasus'),
     // lightlink_phoenix: createNetwork('lightlink_phoenix'),
-    neonevm_devnet: createNetwork('neonevm_devnet'),
+    // neonevm_devnet: createNetwork('neonevm_devnet'),
+    neonevm: createNetwork('neonevm'),
   },
 
   compilers: {
