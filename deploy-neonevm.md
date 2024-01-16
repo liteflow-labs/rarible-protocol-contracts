@@ -685,3 +685,51 @@ deployed erc20TransferProxy at: 0x12832856858Ec1756df10807B9a8422F5bBB37ab
 
 From deployment file deploy/build/contracts/TransferProxy.json
 deployed transferProxy at: 0x59e1C8D19ef6d99fCCbdeF11B5E189fabF6B40fd
+
+# Deploy erc721 token
+
+➜ deploy git:(feature/neon-evm) npm run truffle -- exec ./scripts/deploy-erc721.js --network neonevm --name "Liteflow ERC721" --symbol "LTF" --baseURI ipfs:/ --factoryAddress 0xe62604c8a7b8b2c41e8f2dfa46d51c96223dd860
+
+> @rarible/deploy@0.0.2 truffle
+> truffle exec ./scripts/deploy-erc721.js --network neonevm --name Liteflow ERC721 --symbol LTF --baseURI ipfs:/ --factoryAddress 0xe62604c8a7b8b2c41e8f2dfa46d51c96223dd860
+
+> Warning: possible unsupported (undocumented in help) command line option(s): --name,--symbol,--baseURI,--factoryAddress
+> Loading etherscan key from /Users/nico/.ethereum/etherscan.json
+> loaded etherscan api key
+> creating provider for address: 0x628FC6c02D445c32FF1441b1D6Af1dd97A635CF6
+> Using network 'neonevm'.
+
+name: Liteflow ERC721
+symbol: LTF
+baseURI: ipfs:/
+factoryAddress: 0xe62604c8a7b8b2c41e8f2dfa46d51c96223dd860
+using factory at 0xe62604c8A7b8b2c41e8F2Dfa46d51c96223dD860
+salt 0x79de431d6fb585b4213def9ba54059491298d443ed8b0dfd55348fe9e19cb145
+Confirm info? type yes to confirm: yes
+deploying...
+tx: 0x5e50cedb07041970c8fe7c7f5fd884c8f399597e5f8c88c670717908322927ef
+token deployed at: 0xBd28b28C6b9e2DDC271daBAd8981789851D720ae
+
+# Deploy erc1155 token
+
+➜ deploy git:(feature/neon-evm) ✗ npm run truffle -- exec ./scripts/deploy-erc1155.js --network neonevm --name "Liteflow ERC1155" --symbol "LTF" --baseURI ipfs:/ --factoryAddress 0xe14062af398c4013ef4ca1bded9d054a16b3e6b4
+
+> @rarible/deploy@0.0.2 truffle
+> truffle exec ./scripts/deploy-erc1155.js --network neonevm --name Liteflow ERC1155 --symbol LTF --baseURI ipfs:/ --factoryAddress 0xe14062af398c4013ef4ca1bded9d054a16b3e6b4
+
+> Warning: possible unsupported (undocumented in help) command line option(s): --name,--symbol,--baseURI,--factoryAddress
+> Loading etherscan key from /Users/nico/.ethereum/etherscan.json
+> loaded etherscan api key
+> creating provider for address: 0x628FC6c02D445c32FF1441b1D6Af1dd97A635CF6
+> Using network 'neonevm'.
+
+name: Liteflow ERC1155
+symbol: LTF
+baseURI: ipfs:/
+factoryAddress: 0xe14062af398c4013ef4ca1bded9d054a16b3e6b4
+using factory at 0xe14062aF398c4013eF4cA1bDEd9D054a16b3e6B4
+salt 0xcfcf098f1f3d101f9b3f49621502adc7a1af486a663352b0eb23175e7cfc4793
+Confirm info? type yes to confirm: yes
+deploying...
+tx: 0x51088879067a1066454a637652dc3b2329e5cd6a9eaf1545012eeb93cd1d1dcd
+token deployed at: 0x33eED5Da75d61b9cd7158AD9068eaA65CC112140
