@@ -21,15 +21,15 @@ module.exports = async function (deployer, network) {
   const transferProxy = (await TransferProxy.deployed());
   const erc20TransferProxy = (await ERC20TransferProxy.deployed());
 
-  await deployer.deploy(ExchangeStateV1, { gas: 850000 });
+  await deployer.deploy(ExchangeStateV1);
   const exchangeStateV1 = await ExchangeStateV1.deployed();
   console.log(`deployed exchangeStateV1 at ${exchangeStateV1.address}`)
 
-  await deployer.deploy(ExchangeOrdersHolderV1, { gas: 450000 });
+  await deployer.deploy(ExchangeOrdersHolderV1);
   const exchangeOrdersHolderV1 = await ExchangeOrdersHolderV1.deployed();
   console.log(`deployed exchangeOrdersHolderV1 at ${exchangeOrdersHolderV1.address}`)
 
-  await deployer.deploy(TransferProxyForDeprecated, { gas: 650000 });
+  await deployer.deploy(TransferProxyForDeprecated);
   const transferProxyDeprecated = await TransferProxyForDeprecated.deployed();
   console.log(`deployed transferProxyDeprecated at ${transferProxyDeprecated.address}`)
 
@@ -42,7 +42,6 @@ module.exports = async function (deployer, network) {
     exchangeOrdersHolderV1.address,
     settings.beneficiary,
     settings.buyerFeeSigner,
-    { gas: 5000000 }
   );
   const exchangeV1 = await ExchangeV1.deployed()
   console.log(`deployed exchangeV1 at ${exchangeV1.address}`)
@@ -55,7 +54,6 @@ module.exports = async function (deployer, network) {
       settings.rarible_token_legacy.signer,
       settings.rarible_token_legacy.contractURI,
       settings.rarible_token_legacy.tokenURIPrefix,
-      { gas: 5000000 }
     );
     const raribleTokenLegacy = await RaribleToken.deployed();
     console.log(`deployed raribleTokenLegacy at ${raribleTokenLegacy.address}`)
@@ -69,7 +67,6 @@ module.exports = async function (deployer, network) {
       settings.mintable_token_legacy.newOwner,
       settings.mintable_token_legacy.contractURI,
       settings.mintable_token_legacy.tokenURIPrefix,
-      { gas: 5000000 }
     );
     const mintableTokenLegacy = await MintableToken.deployed();
     console.log(`deployed mintableTokenLegacy at ${mintableTokenLegacy.address}`)

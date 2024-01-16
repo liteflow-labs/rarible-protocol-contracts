@@ -32,13 +32,13 @@ module.exports = async function (deployer, network) {
   const erc721 = await getProxyImplementation(ERC721Rarible, network, ProxyAdmin)
 
   //deploying ERC721RaribleBeacon
-  const beacon721 = await deployer.deploy(ERC721RaribleBeacon, erc721, { gas: 1000000 });
+  const beacon721 = await deployer.deploy(ERC721RaribleBeacon, erc721);
 
   //deploying erc1155 factory
   //ERC1155Rarible implementation
   const erc1155 = await getProxyImplementation(ERC1155Rarible, network, ProxyAdmin)
 
   //deploying ERC1155RaribleBeacon
-  const beacon1155 = await deployer.deploy(ERC1155RaribleBeacon, erc1155, { gas: 1000000 });
+  const beacon1155 = await deployer.deploy(ERC1155RaribleBeacon, erc1155);
 
 };

@@ -30,7 +30,7 @@ module.exports = async function (deployer, network) {
   console.log(`new impl 1155 = ${await beacon1155.implementation()}`)
 
   //deploying new factory
-  const factory1155 = await deployer.deploy(ERC1155RaribleFactoryC2, beacon1155.address, transferProxy, erc1155LazyMintTransferProxy, { gas: 2500000 });
+  const factory1155 = await deployer.deploy(ERC1155RaribleFactoryC2, beacon1155.address, transferProxy, erc1155LazyMintTransferProxy);
   console.log(`deployed factory1155 at ${factory1155.address}`)
 
 };
