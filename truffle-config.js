@@ -80,7 +80,15 @@ module.exports = {
     // lightlink_pegasus: createNetwork('lightlink_pegasus'),
     // lightlink_phoenix: createNetwork('lightlink_phoenix'),
     // neonevm_devnet: createNetwork('neonevm_devnet'),
-    neonevm: createNetwork('neonevm'),
+    // neonevm: createNetwork('neonevm'),
+    arbitrum_sepolia: {
+      ...createNetwork('arbitrum_sepolia'),
+      verify: {
+        apiUrl: 'https://api-sepolia.arbiscan.io/api',
+        apiKey: apiKeys.arbitrum_sepolia,
+        explorerUrl: 'https://sepolia.arbiscan.io/address',
+      },
+    },
   },
 
   compilers: {
