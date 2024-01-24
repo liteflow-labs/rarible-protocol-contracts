@@ -141,6 +141,12 @@ const arbitrum_sepolia = {
   address_CryptoPunks: '0x0000000000000000000000000000000000000000',
 }
 
+const arbitrum_one = {
+  communityWallet: '0x3Ae9Bf5331e076b55B61933206f797F4375D11D9',
+  deploy_CryptoPunks: false,
+  address_CryptoPunks: '0x0000000000000000000000000000000000000000',
+}
+
 let settings = {
   // default: def,
   // rinkeby: rinkeby,
@@ -166,6 +172,7 @@ let settings = {
   neonevm_devnet: neonevm_devnet,
   neonevm: neonevm,
   arbitrum_sepolia: arbitrum_sepolia,
+  arbitrum_one: arbitrum_one,
 }
 
 function getSettings(network) {

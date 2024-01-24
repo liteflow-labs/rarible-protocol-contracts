@@ -81,6 +81,7 @@ module.exports = {
     // lightlink_phoenix: createNetwork('lightlink_phoenix'),
     // neonevm_devnet: createNetwork('neonevm_devnet'),
     // neonevm: createNetwork('neonevm'),
+    arbitrum_one: createNetwork('arbitrum_one'),
     arbitrum_sepolia: {
       ...createNetwork('arbitrum_sepolia'),
       verify: {
