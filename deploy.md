@@ -7,15 +7,15 @@ Make sure you have the corresponding network file in `~/.ethereum/NETWORK_NAME.j
 ```json
 {
   "address": "0xC02b01eeB9a05ecB73f0cde0FB4a287c2aF7d457",
-  "key": "", // mnemonic. the path must be m/44'/60'/0'/0/0
+  "key": "", // private key or mnemonic (the path must be m/44'/60'/0'/0/0)
   "url": "", // provider url
-  "network_id": 56, // binance
+  "network_id": 56 // binance
   // "gasPrice": 6 // optional: in wei. make sure to put a good value even on testnet, not too low and not too high!
 }
 ```
 
-You can find the addresses and mnemonics on 1Password with names like "Liteflow CHAIN Rarible".
-If you create a new address, make sure to save it on 1Password with a name like "Liteflow CHAIN Rarible".
+You can find the addresses and mnemonics on 1Password with names like "Liteflow CHAIN Deployer".
+If you create a new address, make sure to save it on 1Password with a name like "Liteflow CHAIN Deployer".
 
 ### Etherscan config
 
@@ -25,7 +25,8 @@ Create a file in `~/.ethereum/etherscan.json` with the following content:
 {
   "etherscan": "XXX",
   "polygonscan": "XXX",
-  "bscscan": "XXX"
+  "bscscan": "XXX",
+  "arbiscan": "XXX"
 }
 ```
 
