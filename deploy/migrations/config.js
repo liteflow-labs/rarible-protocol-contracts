@@ -135,6 +135,18 @@ const neonevm = {
   address_CryptoPunks: '0x0000000000000000000000000000000000000000',
 }
 
+const arbitrum_sepolia = {
+  communityWallet: '0x29bD48E4cB7562D660506Ff940365a76A8d407E3',
+  deploy_CryptoPunks: false,
+  address_CryptoPunks: '0x0000000000000000000000000000000000000000',
+}
+
+const arbitrum_one = {
+  communityWallet: '0x3Ae9Bf5331e076b55B61933206f797F4375D11D9',
+  deploy_CryptoPunks: false,
+  address_CryptoPunks: '0x0000000000000000000000000000000000000000',
+}
+
 let settings = {
   // default: def,
   // rinkeby: rinkeby,
@@ -159,6 +171,8 @@ let settings = {
   lightlink_phoenix: lightlink_phoenix,
   neonevm_devnet: neonevm_devnet,
   neonevm: neonevm,
+  arbitrum_sepolia: arbitrum_sepolia,
+  arbitrum_one: arbitrum_one,
 }
 
 function getSettings(network) {
