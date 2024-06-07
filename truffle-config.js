@@ -14,11 +14,11 @@ try {
 function createNetwork(name) {
   try {
     var json = require(os.homedir() + '/.ethereum/' + name + '.json')
-    var gasPrice = json.gasPrice != null ? json.gasPrice : 2000000000
+    var gasPrice = json.gasPrice != null ? json.gasPrice : undefined
 
     return {
       provider: () => {
-        const { estimate } = require('@rarible/estimate-middleware')
+        // const { estimate } = require('@rarible/estimate-middleware')
         if (json.path != null) {
           const {
             createProvider: createTrezorProvider,
@@ -35,7 +35,8 @@ function createNetwork(name) {
         }
       },
       from: json.address,
-      // gasPrice: gasPrice,
+      // gasPrice: gasPrice, // if gas price is set, also need to force gas. The default value of gas is like 550M
+      // gas: 20_000_000,
       network_id: json.network_id,
       skipDryRun: true,
       networkCheckTimeout: 4 * 1000 * 1000,
@@ -81,13 +82,22 @@ module.exports = {
     // lightlink_phoenix: createNetwork('lightlink_phoenix'),
     // neonevm_devnet: createNetwork('neonevm_devnet'),
     // neonevm: createNetwork('neonevm'),
-    arbitrum_one: createNetwork('arbitrum_one'),
-    arbitrum_sepolia: {
-      ...createNetwork('arbitrum_sepolia'),
+    // arbitrum_one: createNetwork('arbitrum_one'),
+    // arbitrum_sepolia: {
+    //   ...createNetwork('arbitrum_sepolia'),
+    //   verify: {
+    //     apiUrl: 'https://api-sepolia.arbiscan.io/api',
+    //     apiKey: apiKeys.arbitrum_sepolia,
+    //     explorerUrl: 'https://sepolia.arbiscan.io/address',
+    //   },
+    // },
+    sepolia: createNetwork('sepolia'),
+    polygon_amoy: {
+      ...createNetwork('polygon_amoy'),
       verify: {
-        apiUrl: 'https://api-sepolia.arbiscan.io/api',
+        apiUrl: 'https://api-amoy.polygonscan.com/api',
         apiKey: apiKeys.arbitrum_sepolia,
-        explorerUrl: 'https://sepolia.arbiscan.io/address',
+        explorerUrl: 'https://amoy.polygonscan.com/address',
       },
     },
   },

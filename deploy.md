@@ -52,13 +52,13 @@ Once deployed, copy ALL the outputs logs in a new file at the root named: `deplo
 
 Then extract the following info for the backend config:
 
-- copy smart contract from `deployed transferProxy at`
-- copy smart contract from `deployed erc20TransferProxy at`
 - copy smart contract from `deployed exchangeV2 at`
+- copy smart contract from `deployed transferProxy at` (ERC721 & ERC1155)
+- copy smart contract from `deployed erc20TransferProxy at`
 - copy smart contract from `deployed factory721 minimal at`
 - copy smart contract from `deployed factory1155 at`
 
-Add the new values to the following sections and commit this file as well as the new file `deploy-CHAIN_NAME.md` and also `deploy/.openzeppelin/CHAIN.json`
+Commit the files `deploy-CHAIN_NAME.md` and `deploy/.openzeppelin/CHAIN.json`.
 
 ### Verify contracts
 
