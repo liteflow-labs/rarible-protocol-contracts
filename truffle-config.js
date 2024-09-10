@@ -91,15 +91,31 @@ module.exports = {
     //     explorerUrl: 'https://sepolia.arbiscan.io/address',
     //   },
     // },
-    sepolia: createNetwork('sepolia'),
-    polygon_amoy: {
-      ...createNetwork('polygon_amoy'),
+    // sepolia: createNetwork('sepolia'),
+    // polygon_amoy: {
+    //   ...createNetwork('polygon_amoy'),
+    //   verify: {
+    //     apiUrl: 'https://api-amoy.polygonscan.com/api',
+    //     apiKey: apiKeys.arbitrum_sepolia,
+    //     explorerUrl: 'https://amoy.polygonscan.com/address',
+    //   },
+    // },
+    base: {
+      ...createNetwork('base'),
       verify: {
-        apiUrl: 'https://api-amoy.polygonscan.com/api',
-        apiKey: apiKeys.arbitrum_sepolia,
-        explorerUrl: 'https://amoy.polygonscan.com/address',
+        apiUrl: 'https://api.basescan.org/api',
+        apiKey: apiKeys.base,
+        explorerUrl: 'https://basescan.org/address',
       },
     },
+    //   base_sepolia: {
+    //     ...createNetwork('base_sepolia'),
+    //     verify: {
+    //       apiUrl: 'https://api-sepolia.basescan.org/api',
+    //       apiKey: apiKeys.base_sepolia,
+    //       explorerUrl: 'https://sepolia.basescan.org/address',
+    //     },
+    //   },
   },
 
   compilers: {

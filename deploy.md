@@ -26,13 +26,14 @@ Create a file in `~/.ethereum/etherscan.json` with the following content:
   "etherscan": "XXX",
   "polygonscan": "XXX",
   "bscscan": "XXX",
-  "arbiscan": "XXX"
+  "arbiscan": "XXX",
+  "basescan": "XXX"
 }
 ```
 
 ### Deploy exchange, transfer proxies and factories
 
-Update `deploy/migrations/config.js` to add the network if not already present.
+Update `deploy/migrations/config.js` and `truffle-config.js` to add the network if not already present.
 
 ```bash
 cd deploy

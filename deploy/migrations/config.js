@@ -159,6 +159,18 @@ const polygon_amoy = {
   address_CryptoPunks: '0x0000000000000000000000000000000000000000',
 }
 
+const base = {
+  communityWallet: '0x3Ae9Bf5331e076b55B61933206f797F4375D11D9',
+  deploy_CryptoPunks: false,
+  address_CryptoPunks: '0x0000000000000000000000000000000000000000',
+}
+
+const base_sepolia = {
+  communityWallet: '0x29bD48E4cB7562D660506Ff940365a76A8d407E3',
+  deploy_CryptoPunks: false,
+  address_CryptoPunks: '0x0000000000000000000000000000000000000000',
+}
+
 let settings = {
   // default: def,
   // rinkeby: rinkeby,
@@ -187,6 +199,8 @@ let settings = {
   arbitrum_one: arbitrum_one,
   sepolia: sepolia,
   polygon_amoy: polygon_amoy,
+  base: base,
+  base_sepolia: base_sepolia,
 }
 
 function getSettings(network) {
